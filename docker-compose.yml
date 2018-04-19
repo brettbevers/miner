@@ -14,7 +14,7 @@ services:
 #    volumes:
 #      - ./ml_bme_scoring_tests:/ml_bme_scoring_tests
 
-  notebook:
+  master:
     build:
       context: .
       dockerfile: Dockerfile
@@ -25,4 +25,3 @@ services:
     volumes:
       - ./work:/home/jovyan/work
       - ./gmm:/usr/local/spark/python/gmm
-

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+c1='cd ${SPARK_HOME} && bin/pyspark'
+docker-compose exec master sh -c "$c1 $1"

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+run_test(){
+    local mode='discover'
+
+    if [ -z "$1" ]; then
+        echo "Running unittest: discover mode"
+    else
+        echo "Running unittest with module/script: $1"
+        mode=$1
+    fi
+
+    c1='cd ${SPARK_HOME} && python -m unittest '
+    docker-compose exec master sh -c "$c1$mode"
+}
+
+run_test $1
