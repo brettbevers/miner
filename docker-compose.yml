@@ -1,0 +1,28 @@
+version: "3.0"
+services:
+
+#  postgres:
+#    image: postgres9:latest
+#    expose:
+#      - 5432
+#    ports:
+#      - 5432:5432
+#    environment:
+#      - POSTGRES_USER=test_user
+#      - POSTGRES_PASSWORD=docker
+#      - POSTGRES_DATABASE=docker
+#    volumes:
+#      - ./ml_bme_scoring_tests:/ml_bme_scoring_tests
+
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: start-notebook.sh --NotebookApp.token=''
+    hostname: notebook
+    ports:
+      - 8888:8888
+    volumes:
+      - ./work:/home/jovyan/work
+      - ./gmm:/usr/local/spark/python/gmm
+
