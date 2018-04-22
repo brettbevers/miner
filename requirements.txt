@@ -1,2 +1,4 @@
 # standard dependencies
+findspark==1.1.0
+mock==2.0.0
 python-dateutil

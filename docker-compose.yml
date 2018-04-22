@@ -19,9 +19,10 @@ services:
       context: .
       dockerfile: Dockerfile
     command: start-notebook.sh --NotebookApp.token=''
-    hostname: notebook
+    hostname: master
     ports:
       - 8888:8888
     volumes:
       - ./work:/home/jovyan/work
       - ./gmm:/usr/local/spark/python/gmm
+      - ./gmm_test:/usr/local/spark/python/gmm_test

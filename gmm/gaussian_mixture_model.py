@@ -10,7 +10,7 @@ from pyspark.mllib.linalg import Vectors
 
 Gaussian = namedtuple('Gaussian', ['mu', 'sigma'])
 
-GMMStats = namedtuple('GMMStats', ['log_likelihood', 'p_values'])
+GMMStats = namedtuple('GMMStats', ['log_likelihood', 'null_log_likelihoods', 'p_values'])
 
 
 def remove_dim(matrix, index):
@@ -51,6 +51,10 @@ class ModelingService(object):
             self.gmms[key] = GaussianMixture.train(train, k)
         gmm = self.gmms[key]
         return GaussianMixtureModel(dimensions, gmm.weights, gmm.gaussians)
+
+    def get_log_likelihood(self, k, subspace, dimensions):
+        gmm = self.get_gmm(k, subspace)
+        return gmm.log_likelihood(self, dimensions)
 
     def get_stats(self, k, dimensions):
         gmm = self.get_gmm(k, dimensions)
@@ -119,28 +123,38 @@ class GaussianMixtureModel(object):
 
         return f
 
-    def log_likelihood(self, modeling_service):
+    def log_likelihood(self, modeling_service, dimensions=None):
         k = self.k
         if k < 2:
             raise SingularCovarianceException("Only {} gaussians have non-singular covariance.".format(k))
 
-        data = modeling_service.get_subspace(self.dimensions)
-        ll_func = self.log_likelihood_summand_func()
+        if dimensions is None:
+            dimensions = self.dimensions
+
+        data = modeling_service.get_subspace(dimensions)
+        ll_func = self.log_likelihood_summand_func(dimensions)
 
         return data.map(ll_func).sum()
 
-    def stats(self, modeling_service):
+    def stats(self, modeling_service, dimensions=None):
         k = self.k
         if k < 2:
             raise SingularCovarianceException("Only {} gaussians have non-singular covariance.".format(k))
 
-        data = modeling_service.get_subspace(self.dimensions)
-
-        dimensions = np.array(self.dimensions)
+        if dimensions is None:
+            dimensions = self.dimensions
+        dimensions = np.array(dimensions)
         d = dimensions.shape[0]
-        ll_func = self.log_likelihood_summand_func()
-        marginal_ll_funcs = [self.log_likelihood_summand_func(np.delete(dimensions, i)) for i in range(d)]
-        null_ll_funcs = [modeling_service.get_gmm(k, [dim]).log_likelihood_summand_func() for dim in dimensions]
+
+        data = modeling_service.get_subspace(dimensions)
+
+        ll_func = self.log_likelihood_summand_func(dimensions)
+        if d < 2:
+            marginal_ll_funcs = []
+            null_ll_funcs = []
+        else:
+            marginal_ll_funcs = [self.log_likelihood_summand_func(np.delete(dimensions, i)) for i in range(d)]
+            null_ll_funcs = [modeling_service.get_gmm(k, [dim]).log_likelihood_summand_func() for dim in dimensions]
 
         def f(v):
             x = v.toArray()
@@ -153,7 +167,7 @@ class GaussianMixtureModel(object):
 
         sums = data.map(f).sum()
         ll = sums[0]
-        # p_values = [chi2.sf(-2 * (x - ll), df=(d - 1) * k) for x in sums[1:]]
-        p_values = sums[1:]
+        null_log_likelihoods = sums[1:]
+        p_values = [chi2.sf(-2 * (x - ll), df=(d - 1) * k) for x in sums[1:]]
 
-        return GMMStats(ll, p_values)
+        return GMMStats(ll, null_log_likelihoods, p_values)
