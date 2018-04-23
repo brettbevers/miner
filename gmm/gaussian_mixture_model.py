@@ -154,7 +154,7 @@ class GaussianMixtureModel(object):
             null_ll_funcs = []
         else:
             marginal_ll_funcs = [self.log_likelihood_summand_func(np.delete(dimensions, i)) for i in range(d)]
-            null_ll_funcs = [modeling_service.get_gmm(k, [dim]).log_likelihood_summand_func() for dim in dimensions]
+            null_ll_funcs = [self.log_likelihood_summand_func([dim]) for dim in dimensions]
 
         def f(v):
             x = v.toArray()
