@@ -27,17 +27,6 @@ def zero_off_diagonal(matrix, indices):
     return result
 
 
-class memoized:
-    def __init__(self, f):
-        self.f = f
-
-    def __call__(self, *args, **kwargs):
-        if not hasattr(self, 'val'):
-            self.val = self.f(*args, **kwargs)
-
-        return self.val
-
-
 class Gaussian(object):
     def __init__(self, mu, sigma):
         self.mu = mu  # type: np.ndarray
@@ -57,7 +46,6 @@ class Gaussian(object):
         }
 
     @property
-    @memoized
     def num_dimensions(self):
         return self.mu.shape[0]
 
@@ -78,7 +66,6 @@ class ModelingService(object):
         self.subspaces = {}
 
     @property
-    @memoized
     def num_dimensions(self):
         return self.training_data.take(1)[0].toArray().shape[0]
 
@@ -126,12 +113,10 @@ class GaussianMixtureModel(object):
         self.gaussians = gaussians
 
     @property
-    @memoized
     def num_dimensions(self):
         return self.gaussians[0].num_dimensions
 
     @property
-    @memoized
     def corrected_model(self):
         singular_sigmas = 0
         weights = []
@@ -155,7 +140,6 @@ class GaussianMixtureModel(object):
         return weights, gaussians, inverses
 
     @property
-    @memoized
     def k(self):
         weights, gaussians, inverses = self.corrected_model
         return len(weights)
@@ -167,7 +151,8 @@ class GaussianMixtureModel(object):
 
     def log_likelihood_summand_func(self):
         corrected_model = list(zip(*self.corrected_model))
-        gaussians = [(g.mu, s_inv) for w, g, s_inv in corrected_model]
+
+        ll_gaussians = [(g.mu, s_inv) for w, g, s_inv in corrected_model]
 
         d = self.num_dimensions
         coeffs = np.array([w * np.power(2 * pi, -d / 2.0) * np.power(np.linalg.det(g.sigma), -0.5)
@@ -175,7 +160,7 @@ class GaussianMixtureModel(object):
 
         def f(x):
             exponents = []
-            for mu, s_inv in gaussians:
+            for mu, s_inv in ll_gaussians:
                 diff = x - mu
                 exponents.append(-0.5 * np.matmul(diff, np.matmul(s_inv, diff)))
             return logsumexp(np.array(exponents), b=coeffs)
@@ -185,7 +170,7 @@ class GaussianMixtureModel(object):
     def log_likelihood(self, data):
         return data.map(self.log_likelihood_summand_func()).sum()
 
-    def stats(self, data):
+    def stats_func(self):
         k = self.k
         if k < 2:
             raise SingularCovarianceException("Only {} gaussians have non-singular covariance.".format(k))
@@ -203,18 +188,25 @@ class GaussianMixtureModel(object):
                                  for i in dimensions]
             null_ll_funcs = [self.marginal([dim]).log_likelihood_summand_func() for dim in dimensions]
 
-        other_ll_funcs = zip(marginal_ll_funcs, null_ll_funcs)
+        other_ll_funcs = list(enumerate(zip(marginal_ll_funcs, null_ll_funcs)))
 
         def f(v):
             x = v.toArray()
             results = [ll_func(x)]
             results.extend([
                 marg_ll(np.delete(x, i)) + null_ll(x[i])
-                for i, (marg_ll, null_ll) in enumerate(other_ll_funcs)
+                for i, (marg_ll, null_ll) in other_ll_funcs
             ])
             return np.array(results)
 
-        sums = data.map(f).sum()
+        return f
+
+    def stats(self, data):
+        d = self.num_dimensions
+        k = self.k
+
+        sums = data.map(self.stats_func()).sum()
+
         ll = sums[0]
         null_log_likelihoods = sums[1:]
         p_values = [chi2.sf(-2 * (x - ll), df=(d - 1) * k) for x in sums[1:]]
