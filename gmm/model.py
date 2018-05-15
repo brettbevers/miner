@@ -7,6 +7,13 @@ from collections import namedtuple
 
 from pyspark.mllib.clustering import GaussianMixture
 from pyspark.mllib.linalg import Vectors
+from pyspark.mllib.linalg.distributed import RowMatrix
+
+
+# Calculate epsilon like https://github.com/apache/spark/blob/master/mllib-local/src/main/scala/org/apache/spark/ml/impl/Utils.scala
+EPSILON = 1.0
+while (1.0 + (EPSILON / 2.0)) != 1.0:
+    EPSILON = EPSILON / 2.0
 
 
 def remove_dim(matrix, index):
@@ -25,6 +32,20 @@ def zero_off_diagonal(matrix, indices):
                 result[i][x] = 0.0
 
     return result
+
+
+def svd_pinv(m):
+  U,s,Vh = np.linalg.svd(m)
+  tol = EPSILON * max(s) * s.shape[0]
+  s_inv = np.array([x**-1 if x > tol else 0.0 for x in s])
+  m_inv = np.matmul(np.matmul(np.transpose(Vh), np.diag(s_inv)), np.transpose(U))
+  return m_inv
+
+
+def svd_pdet(m):
+    U,s,Vh = np.linalg.svd(m)
+    tol = EPSILON * max(s) * s.shape[0]
+    return np.prod([x for x in s if x > tol])
 
 
 class Gaussian(object):
@@ -59,7 +80,7 @@ class SingularCovarianceException(Exception):
 
 
 class ModelingService(object):
-    def __init__(self, training_data, max_iterations=100):
+    def __init__(self, training_data, max_iterations=200):
         self.training_data = training_data
         self.max_iterations = max_iterations
         self.gmms = {}
@@ -79,12 +100,21 @@ class ModelingService(object):
         return self.subspaces[key]
 
     def get_gmm(self, k):
+        k = int(k)
         key = k
 
         if key not in self.gmms:
-            m = GaussianMixture.train(self.training_data, k, maxIterations=self.max_iterations)
-            weights = m.weights
-            gaussians = [Gaussian(g.mu, g.sigma.toArray()) for g in m.gaussians]
+            if k == 1:
+                training_data = self.training_data.rdd.map(lambda r: Vectors.fromML(r.features))
+                row_matrix = RowMatrix(training_data)
+                mean = row_matrix.computeColumnSummaryStatistics().mean()
+                cov = row_matrix.computeCovariance().toArray()
+                weights = [1.0]
+                gaussians = [Gaussian(mean, cov)]
+            else:
+                m = GaussianMixture.train(self.training_data, k, maxIterations=self.max_iterations)
+                weights = m.weights
+                gaussians = [Gaussian(g.mu, g.sigma.toArray()) for g in m.gaussians]
 
             self.gmms[key] = GaussianMixtureModel(weights, gaussians)
 
@@ -97,10 +127,6 @@ class ModelingService(object):
     def get_stats(self, k):
         gmm = self.get_gmm(k)
         return gmm.stats(self.training_data)
-
-    def fit_k(self, k_range):
-        k_values = [min(k_range) - 1] + k_range
-        log_likelihoods = [self.get_log_likelihood(k) for k in k_values]
 
 
 GMMStats = namedtuple('GMMStats', ['log_likelihood', 'null_log_likelihoods', 'p_values'])
@@ -141,8 +167,7 @@ class GaussianMixtureModel(object):
 
     @property
     def k(self):
-        weights, gaussians, inverses = self.corrected_model
-        return len(weights)
+        return len(self.weights)
 
     def marginal(self, dimensions):
         new_weights = list(self.weights)
@@ -150,13 +175,11 @@ class GaussianMixtureModel(object):
         return self.__class__(new_weights, new_gaussians)
 
     def log_likelihood_summand_func(self):
-        corrected_model = list(zip(*self.corrected_model))
-
-        ll_gaussians = [(g.mu, s_inv) for w, g, s_inv in corrected_model]
+        ll_gaussians = [(g.mu, svd_pinv(g.sigma)) for w, g in zip(self.weights, self.gaussians)]
 
         d = self.num_dimensions
-        coeffs = np.array([w * np.power(2 * pi, -d / 2.0) * np.power(np.linalg.det(g.sigma), -0.5)
-                           for w, g, s_inv in corrected_model])
+        coeffs = np.array([w * np.power(2 * pi, -d / 2.0) * np.power(svd_pdet(g.sigma), -0.5)
+                           for w, g in zip(self.weights, self.gaussians)])
 
         def f(x):
             exponents = []
@@ -168,7 +191,8 @@ class GaussianMixtureModel(object):
         return f
 
     def log_likelihood(self, data):
-        return data.map(self.log_likelihood_summand_func()).sum()
+        val = data.map(self.log_likelihood_summand_func()).sum()
+        return -1 * np.abs(val) # because the pseudo-inverse sometimes flips the sign.
 
     def stats_func(self):
         k = self.k
@@ -206,6 +230,7 @@ class GaussianMixtureModel(object):
         k = self.k
 
         sums = data.map(self.stats_func()).sum()
+        sums = -1 * np.abs(sums) # because the pseudo-inverse sometimes flips the sign.
 
         ll = sums[0]
         null_log_likelihoods = sums[1:]
