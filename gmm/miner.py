@@ -1,18 +1,8 @@
-import copy, random, re
-
-import numpy as np
-from pyspark import StorageLevel
-import pyspark.sql.functions as F
-import pyspark.sql.types as T
-from scipy import stats
+import copy, random
 
 from gmm.model import ModelingService, Gaussian
-from lib.sparse_vector_dataset_v1 import SparseVectorDimension
-from lib.sparse_standard_scaler import SparseStandardScaler
-
-
-pi = F.udf(lambda probability: float(probability[0]), T.FloatType())
-one_minus_pi = F.udf(lambda probability: float(probability[1]), T.FloatType())
+from ml_bme_scoring.transformer.legacy.sparse_vector_dataset_v1 import SparseVectorDimension
+from ml_bme_scoring.mining.sparse_standard_scaler import SparseStandardScaler
 
 
 def loadBaseFeature(data):
@@ -20,9 +10,10 @@ def loadBaseFeature(data):
 
 
 def loadForwardSelectionIteration(data):
-    result = copy.copy(data)
+    result = copy.deepcopy(data)
     result['features'] = [SparseVectorDimension.fromDict(f) for f in data['features']]
-    result['gaussians'] = [Gaussian.fromDict(g) for g in data['gaussians']]
+    for k, gmm_stats in data['k_range_stats'].items():
+        result['k_range_stats'][k]['gaussians'] = [Gaussian.fromDict(g) for g in gmm_stats['gaussians']]
     return result
 
 
@@ -31,18 +22,11 @@ def baseFeatureToDict(data):
 
 
 def forwardSelectionIterationToDict(data):
-    result = copy.copy(data)
+    result = copy.deepcopy(data)
     result['features'] = [f.toDict() for f in data['features']]
-    result['gaussians'] = [g.toDict() for g in data['gaussians']]
+    for k, gmm_stats in data['k_range_stats'].items():
+        result['k_range_stats'][k]['gaussians'] = [g.toDict() for g in gmm_stats['gaussians']]
     return result
-
-
-def readJson(path):
-    pass
-
-
-def writeJsonWithRetry(rdd, savepath, mode='error'):
-    pass
 
 
 class GaussianMixtureModelMinerState(object):
@@ -51,21 +35,21 @@ class GaussianMixtureModelMinerState(object):
     FINAL_SELECTION_ALPHA = 0.01
 
     @classmethod
-    def load_or_initialize(cls, savepath, baseFeatures):
-        # try:
-        #     dbutils.fs.ls(savepath)    # TODO: fix dbutils
-        # except Exception as err:
-        #     if "java.io.FileNotFoundException" in err.message:
-        #         return cls(baseFeatures)
-        #     else:
-        #         raise
-        # else:
-        #     return cls.load(savepath)
+    def load_or_initialize(cls, fs_adapter, savepath, baseFeatures):
+        try:
+            fs_adapter.ls(savepath)
+        except Exception as err:
+            if "java.io.FileNotFoundException" in err.message:
+                return cls(baseFeatures)
+            else:
+                raise
+        else:
+            return cls.load(fs_adapter, savepath)
         return cls(baseFeatures)
 
     @classmethod
-    def load(cls, savepath):
-        attrs = readJson(savepath).collect()[0]  # TODO: fix readJson
+    def load(cls, fs_adapter, savepath):
+        attrs = fs_adapter.read_json(savepath).collect()[0]
         baseFeatures = [loadBaseFeature(d) for d in attrs['baseFeatures']]
         forwardSelectionIterations = [loadForwardSelectionIteration(d) for d in attrs['forwardSelectionIterations']]
         return cls(baseFeatures, forwardSelectionIterations)
@@ -74,13 +58,13 @@ class GaussianMixtureModelMinerState(object):
         self.baseFeatures = baseFeatures
         self.forwardSelectionIterations = forwardSelectionIterations
 
-    def save(self, spark_context, savepath, mode='overwrite'):
+    def save(self, fs_adapter, savepath, mode='overwrite'):
         result = {
             'baseFeatures': [baseFeatureToDict(x) for x in self.baseFeatures],
             'forwardSelectionIterations': [forwardSelectionIterationToDict(x) for x in self.forwardSelectionIterations],
         }
-        rdd = spark_context.parallelize([result], numSlices=1)
-        writeJsonWithRetry(rdd, savepath, mode=mode)  # TODO: fix writeJsonWithRetry
+        rdd = fs_adapter.spark_context.parallelize([result], numSlices=1)
+        fs_adapter.write_json_with_retry(rdd, savepath, mode=mode)
 
     def registerForwardSelection(self, data, savepath=None, mode='overwrite'):
         self.forwardSelectionIterations.append(data)
@@ -101,19 +85,21 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
 
     def __init__(self, sparseDataSet, columnFilter=None, state=None,
                  min_iterations=20, max_features=12,
-                 step_size=5, alpha=0.01, max_training_iterations=100, memory=2):
-        self._state = state or GaussianMixtureModelMinerState(self.fields)
+                 step_size=5, alpha=0.01, max_training_iterations=200,
+                 memory=2, k_search_radius=2, initial_k_range=range(1, 5)):
+        self._state = state or GaussianMixtureModelMinerState(self.__class__._fields(sparseDataSet, columnFilter))
         self.sparseDataSet = sparseDataSet
         self.columnFilter = columnFilter
         self.min_iterations = min_iterations
-        self.max_features =  max_features
+        self.max_features = max_features
         self.step_size = step_size
         self.alpha = alpha
         self.max_training_iterations = max_training_iterations
         self.memory = memory
+        self.k_search_radius = k_search_radius
+        self.initial_k_range = initial_k_range
         self._standardized_columns = {}
         self._standardized_data_set = None
-        self._has_retained_features = False
 
     @classmethod
     def _fields(cls, sparseDataSet, columnFilter=None):
@@ -123,7 +109,7 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
             return filter(columnFilter, sparseDataSet.columns)
 
     @classmethod
-    def load_or_initialize(cls, savepath, sparseDataSet, successFunct, columnFilter=None, baseFeatures=None):
+    def load_or_initialize(cls, fs_adapter, savepath, sparseDataSet, columnFilter=None, baseFeatures=None, **kwargs):
         if baseFeatures is None:
             filteredBaseFeatures = cls._fields(sparseDataSet, columnFilter)
         elif columnFilter is None:
@@ -131,8 +117,8 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
         else:
             filteredBaseFeatures = filter(columnFilter, baseFeatures)
 
-        state = GaussianMixtureModelMinerState.load_or_initialize(savepath, filteredBaseFeatures)
-        return cls(sparseDataSet, successFunct, columnFilter, state)
+        state = GaussianMixtureModelMinerState.load_or_initialize(fs_adapter, savepath, filteredBaseFeatures)
+        return cls(sparseDataSet, columnFilter, state, **kwargs)
 
     def fields(self):
         return self._state.baseFeatures
@@ -141,10 +127,8 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
         self.performForwardSelections(savepath=savepath)
 
     def continueForwardSelection(self):
-        last_p_values = self._state.forwardSelectionIterations[-1]['p-values']
-        num_retained_features = len([p for p in last_p_values if p < self.alpha])
         return len(self._state.forwardSelectionIterations) < self.min_iterations \
-            or num_retained_features < self.max_features
+            or len(self.get_retained_features()) < self.max_features
 
     def performForwardSelections(self, savepath=None):
         while self.continueForwardSelection():
@@ -152,23 +136,46 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
             self._state.registerForwardSelection(data, savepath=savepath)
 
     def selectModel(self, features, k_range, sampleFraction=None):
+        k_range = sorted(k_range)
         data_set = self.generateMlDataSet(columns=features)
         if sampleFraction:
             data_set = data_set.sample(False, sampleFraction)
-        training_set = data_set
+        training_set = data_set.persist()
         service = ModelingService(training_set, max_iterations=self.max_training_iterations)
-        k, log_likelihoods = service.fit_k(k_range)
-        gmm = service.get_gmm(self, k)
-        stats = gmm.stats(service)
+
+        result_stats = {}
+        for k in k_range:
+            ll = service.get_log_likelihood(k, retry=True)
+            gmm = service.get_gmm(k)
+            result_stats[k] = {
+                'weights': gmm.weights,
+                'gaussians': gmm.gaussians,
+                'log_likelihood': ll
+            }
+
+        # Sometimes using the pseudo-inverse leads to positive values,
+        # like when the covariance matrix is not even nearly invertible.
+        # We exclude these pathological cases.
+        valid_k = [
+            (k, result_stats[k]['log_likelihood'])
+            for k in k_range
+            if result_stats[k]['log_likelihood'] < 0
+        ]
+
+        selected_k = max([
+            (k, ll - valid_k[i - 1][1])
+            for i, (k, ll) in enumerate(valid_k)
+            if i > 0
+        ], key=lambda x: x[1])[0]
+
+        selected_stats = service.get_stats(selected_k, calc_p_values=True)
+
         result = {'features': features,
-                  'k': k,
-                  'weights': gmm.weights,
-                  'gaussians': gmm.gaussians,
-                  'p-values': stats.p_values,
-                  'log_likelihoods': stats.log_likelihood,
-                  'null_log_likelihoods': stats.null_log_likelihoods,
                   'k_range': k_range,
-                  'k_range_log_likelihoods': log_likelihoods}
+                  'k_range_stats': result_stats,
+                  'selected_k': selected_k,
+                  'selected_k_stats': selected_stats,
+                  }
         training_set.unpersist()
         return result
 
@@ -183,25 +190,27 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
         for i in range(self.memory):
             if len(prev_iterations) > i:
                 iteration = prev_iterations[-1 - i]
-                previous_features = previous_features + [
-                    iteration['features'][i]
-                    for (i, p) in enumerate(iteration['p-values'])
-                    if p < self.alpha
-                ]
-        if previous_features:
-            self._has_retained_features = True
+                iteration_features = iteration['features']
+                p_values = iteration['selected_k_stats']['p-values']
+                for f, p in zip(iteration_features, p_values):
+                    if p < self.alpha:
+                        previous_features.append(f)
         return list(set(previous_features))
 
     def get_forward_select_features(self):
         previous_features = self.get_retained_features()
-        sample_of_features = random.sample(self.fields(), self.step_size)
+        fields = self.fields()
+        step_size = min([len(fields), self.step_size])
+        sample_of_features = random.sample(fields, step_size)
         return list(set(previous_features + sample_of_features))
 
     def get_forward_select_k_range(self):
-        if self._has_retained_features:
-            last_k = self._state.forwardSelectionIterations[-1]['k']
-            return range(max([last_k - 2, 2]), last_k + 3)
+        if self._state.forwardSelectionIterations:
+            last_k = self._state.forwardSelectionIterations[-1]['selected_k']
+            start_k = max([last_k - self.k_search_radius, 1])
+            end_k = last_k + self.k_search_radius
+            return range(start_k, end_k + 1)
         else:
-            return range(2, 11)
+            return self.initial_k_range
 
 

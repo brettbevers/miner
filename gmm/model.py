@@ -1,16 +1,19 @@
 from math import pi
 from scipy.misc import logsumexp
-from scipy.stats import chi2
+from scipy.stats import norm
 import numpy as np
+from threading import Thread, Lock
 
-from collections import namedtuple
-
-from pyspark.mllib.clustering import GaussianMixture
+from pyspark import RDD
+from pyspark.ml.clustering import GaussianMixture
 from pyspark.mllib.linalg import Vectors
+from pyspark.ml.linalg import Vectors as MlVectors
 from pyspark.mllib.linalg.distributed import RowMatrix
+from pyspark.sql import DataFrame
 
 
-# Calculate epsilon like https://github.com/apache/spark/blob/master/mllib-local/src/main/scala/org/apache/spark/ml/impl/Utils.scala
+# Calculate epsilon like
+# https://github.com/apache/spark/blob/master/mllib-local/src/main/scala/org/apache/spark/ml/impl/Utils.scala
 EPSILON = 1.0
 while (1.0 + (EPSILON / 2.0)) != 1.0:
     EPSILON = EPSILON / 2.0
@@ -75,68 +78,140 @@ class Gaussian(object):
         return self.__class__(np.delete(self.mu, removed_dimensions), remove_dim(self.sigma, removed_dimensions))
 
 
-class SingularCovarianceException(Exception):
-    pass
-
-
 class ModelingService(object):
-    def __init__(self, training_data, max_iterations=200):
-        self.training_data = training_data
+    def __init__(self, training_data, max_iterations=200, spark_session=None,
+                 ll_sample_size=5, ll_sample_fraction=0.99, fit_model_retries=10):
+        if hasattr(training_data, 'rdd'):
+            self.ml_training_data = training_data  # type: DataFrame
+            self.mllib_training_data = training_data.rdd\
+                .map(lambda r: Vectors.fromML(r.features)).persist()  # type: RDD
+        else:
+            if spark_session is None:
+                raise Exception("Spark session must be provided if training data is not a dataframe.")
+            self.mllib_training_data = training_data  # type: RDD
+            self.ml_training_data = spark_session.createDataFrame(
+                training_data.map(lambda v: (MlVectors.dense(v),)),
+                ['features']
+            )  # type: DataFrame
+
         self.max_iterations = max_iterations
+        self.ll_sample_size = ll_sample_size
+        self.ll_sample_fraction = ll_sample_fraction
+        self.ll_samples = {}
+        self.fit_model_retries = fit_model_retries
         self.gmms = {}
         self.subspaces = {}
 
     @property
     def num_dimensions(self):
-        return self.training_data.take(1)[0].toArray().shape[0]
+        return self.mllib_training_data.take(1)[0].toArray().shape[0]
 
-    def subspace(self, dimensions):
-        key = tuple(dimensions)
-        if key not in self.subspaces:
-            removed_dimensions = [i for i in range(self.num_dimensions) if i not in dimensions]
-            new_training_data = self.training_data \
-                .map(lambda v: Vectors.dense(np.delete(v.toArray(), removed_dimensions)))
-            self.subspaces[key] = self.__class__(new_training_data, self.max_iterations)
-        return self.subspaces[key]
+    def fit_ml_model(self, k, sample_fraction=None, retry=True):
+        if sample_fraction:
+            training_data = self.ml_training_data.sample(False, fraction=sample_fraction)
+        else:
+            training_data = self.ml_training_data
 
-    def get_gmm(self, k):
+        result = GaussianMixture(k=k, maxIter=self.max_iterations).fit(training_data)
+        ll = result.summary.logLikelihood
+
+        # Retry to get a valid model if the calculated log likelihood is > 0.
+        retries = 0
+        while retry and ll > 0 and retries < self.fit_model_retries:
+            retry_sample_fraction = sample_fraction or self.ll_sample_fraction
+            retry_data = self.ml_training_data.sample(False, fraction=retry_sample_fraction)
+            result = GaussianMixture(k=k, maxIter=self.max_iterations).fit(retry_data)
+            ll = result.summary.logLikelihood
+            retries += 1
+
+        return result
+
+    def get_gmm(self, k, sample_fraction=None, retry=True):
         k = int(k)
         key = k
 
         if key not in self.gmms:
             if k == 1:
-                training_data = self.training_data.rdd.map(lambda r: Vectors.fromML(r.features))
-                row_matrix = RowMatrix(training_data)
+                if sample_fraction:
+                    data = self.mllib_training_data.sample(False, sample_fraction)
+                else:
+                    data = self.mllib_training_data
+                row_matrix = RowMatrix(data)
                 mean = row_matrix.computeColumnSummaryStatistics().mean()
                 cov = row_matrix.computeCovariance().toArray()
                 weights = [1.0]
                 gaussians = [Gaussian(mean, cov)]
+                log_likelihood = None
             else:
-                m = GaussianMixture.train(self.training_data, k, maxIterations=self.max_iterations)
+                m = self.fit_ml_model(k, sample_fraction=sample_fraction, retry=retry)
                 weights = m.weights
-                gaussians = [Gaussian(g.mu, g.sigma.toArray()) for g in m.gaussians]
+                gaussians = [Gaussian(g.mean, g.cov.toArray()) for g in m.gaussiansDF.collect()]
+                log_likelihood = m.summary.logLikelihood
 
-            self.gmms[key] = GaussianMixtureModel(weights, gaussians)
+            self.gmms[key] = GaussianMixtureModel(weights, gaussians, log_likelihood)
 
         return self.gmms[key]
 
-    def get_log_likelihood(self, k):
-        gmm = self.get_gmm(k)
-        return gmm.log_likelihood(self.training_data)
+    def get_log_likelihood(self, k, retry=True):
+        gmm = self.get_gmm(k, retry=retry)
+        return gmm.log_likelihood(self.mllib_training_data)
 
-    def get_stats(self, k):
-        gmm = self.get_gmm(k)
-        return gmm.stats(self.training_data)
+    def get_stats_sample(self, k):
+        k = int(k)
+        key = k
 
+        if key not in self.ll_samples:
+            sample = []
+            sample_lock = Lock
 
-GMMStats = namedtuple('GMMStats', ['log_likelihood', 'null_log_likelihoods', 'p_values'])
+            def f():
+                gmm = self.get_gmm(k, sample_fraction=self.ll_sample_fraction)  # type: GaussianMixtureModel
+                lls = gmm.calc_stats()
+                sample_lock.acquire()
+                sample.append(lls)
+                sample_lock.release()
+
+            threads = []
+            for _ in range(self.ll_sample_size):
+                t = Thread(target=f)
+                t.start()
+                threads.append(t)
+
+            for t in threads:
+                t.join()
+
+            self.ll_samples[key] = np.array(sample)
+
+        return self.ll_samples[key]
+
+    def get_stats(self, k, calc_p_values=True):
+        if not calc_p_values:
+            gmm = self.get_gmm(k)
+            return gmm.stats(self.mllib_training_data)
+
+        stats_sample = self.get_stats_sample(k)
+        sample_size = stats_sample.shape[0]
+        mean_lls = np.mean(stats_sample, axis=0)
+        diffs = np.array([v[1:] - v[0] for v in stats_sample])
+
+        p_values = [norm.cdf(x) for x in (np.mean(diffs, axis=0) * np.sqrt(sample_size)) / np.std(diffs, axis=0)]
+
+        return {
+            'num_dimensions': diffs.shape[1],
+            'k': k,
+            'stats_sample': stats_sample.tolist(),
+            'mean_log_likelihood': mean_lls[0],
+            'mean_null_log_likelihoods': mean_lls[1:].tolist(),
+            'p-values': p_values
+        }
 
 
 class GaussianMixtureModel(object):
 
-    def __init__(self, weights, gaussians):
-        self.weights = weights
-        self.gaussians = gaussians
+    def __init__(self, weights, gaussians, log_likelihood=None):
+        self.weights = weights  # type: np.ndarray
+        self.gaussians = gaussians  # type: list
+        self._log_likelihood = log_likelihood  # type: float
 
     @property
     def num_dimensions(self):
@@ -190,15 +265,17 @@ class GaussianMixtureModel(object):
 
         return f
 
-    def log_likelihood(self, data):
-        val = data.map(self.log_likelihood_summand_func()).sum()
-        return -1 * np.abs(val) # because the pseudo-inverse sometimes flips the sign.
+    def calc_log_likelihood(self, data):
+        return data.map(self.log_likelihood_summand_func()).sum()
+
+    def log_likelihood(self, data=None):
+        if self._log_likelihood is None:
+            if data is None:
+                raise Exception("Must provide data to calculate log-likelihood.")
+            self._log_likelihood = self.calc_log_likelihood(data)
+        return self._log_likelihood
 
     def stats_func(self):
-        k = self.k
-        if k < 2:
-            raise SingularCovarianceException("Only {} gaussians have non-singular covariance.".format(k))
-
         ll_func = self.log_likelihood_summand_func()
 
         d = self.num_dimensions
@@ -225,15 +302,15 @@ class GaussianMixtureModel(object):
 
         return f
 
+    def calc_stats(self, data):
+        return data.map(self.stats_func()).sum()
+
     def stats(self, data):
-        d = self.num_dimensions
-        k = self.k
+        lls = self.calc_stats(data)
 
-        sums = data.map(self.stats_func()).sum()
-        sums = -1 * np.abs(sums) # because the pseudo-inverse sometimes flips the sign.
-
-        ll = sums[0]
-        null_log_likelihoods = sums[1:]
-        p_values = [chi2.sf(-2 * (x - ll), df=(d - 1) * k) for x in sums[1:]]
-
-        return GMMStats(ll, null_log_likelihoods, p_values)
+        return {
+            'num_dimensions': self.num_dimensions,
+            'k': self.k,
+            'log_likelihood': lls[0],
+            'null_log_likelihoods': lls[1:]
+        }
