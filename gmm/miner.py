@@ -40,12 +40,11 @@ class GaussianMixtureModelMinerState(object):
             fs_adapter.ls(savepath)
         except Exception as err:
             if "java.io.FileNotFoundException" in err.message:
-                return cls(baseFeatures)
+                return cls(baseFeatures, fs_adapter=fs_adapter)
             else:
                 raise
         else:
-            return cls.load(fs_adapter, savepath, fs_adapter=fs_adapter)
-        return cls(baseFeatures, fs_adapter=fs_adapter)
+            return cls.load(fs_adapter, savepath)
 
     @classmethod
     def load(cls, fs_adapter, savepath):
@@ -88,10 +87,12 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
                  min_iterations=20, max_features=12,
                  step_size=5, alpha=0.01, max_training_iterations=200,
                  memory=2, k_search_radius=2, initial_k_range=range(1, 5)):
-        self._state = state or GaussianMixtureModelMinerState(
-            self.__class__._fields(sparseDataSet, columnFilter),
-            fs_adapter=fs_adapter
-        )
+        if not state:
+            state = GaussianMixtureModelMinerState(
+              self.__class__._fields(sparseDataSet, columnFilter),
+              fs_adapter=fs_adapter
+            )
+        self._state = state
         self.sparseDataSet = sparseDataSet
         self.columnFilter = columnFilter
         self.min_iterations = min_iterations
@@ -122,7 +123,7 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
             filteredBaseFeatures = filter(columnFilter, baseFeatures)
 
         state = GaussianMixtureModelMinerState.load_or_initialize(fs_adapter, savepath, filteredBaseFeatures)
-        return cls(sparseDataSet, columnFilter, state, **kwargs)
+        return cls(sparseDataSet, columnFilter, state, fs_adapter=fs_adapter, **kwargs)
 
     def fields(self):
         return self._state.baseFeatures
