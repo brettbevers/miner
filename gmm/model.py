@@ -99,8 +99,6 @@ class ModelingService(object):
         self.ll_sample_fraction = ll_sample_fraction
         self.ll_samples = {}
         self.fit_model_retries = fit_model_retries
-        self.gmms = {}
-        self.subspaces = {}
 
     @property
     def num_dimensions(self):
@@ -127,30 +125,24 @@ class ModelingService(object):
         return result
 
     def get_gmm(self, k, sample_fraction=None, retry=True):
-        k = int(k)
-        key = k
-
-        if key not in self.gmms:
-            if k == 1:
-                if sample_fraction:
-                    data = self.mllib_training_data.sample(False, sample_fraction)
-                else:
-                    data = self.mllib_training_data
-                row_matrix = RowMatrix(data)
-                mean = row_matrix.computeColumnSummaryStatistics().mean()
-                cov = row_matrix.computeCovariance().toArray()
-                weights = [1.0]
-                gaussians = [Gaussian(mean, cov)]
-                log_likelihood = None
+        if k == 1:
+            if sample_fraction:
+                data = self.mllib_training_data.sample(False, sample_fraction)
             else:
-                m = self.fit_ml_model(k, sample_fraction=sample_fraction, retry=retry)
-                weights = m.weights
-                gaussians = [Gaussian(g.mean, g.cov.toArray()) for g in m.gaussiansDF.collect()]
-                log_likelihood = m.summary.logLikelihood
+                data = self.mllib_training_data
+            row_matrix = RowMatrix(data)
+            mean = row_matrix.computeColumnSummaryStatistics().mean()
+            cov = row_matrix.computeCovariance().toArray()
+            weights = [1.0]
+            gaussians = [Gaussian(mean, cov)]
+            log_likelihood = None
+        else:
+            m = self.fit_ml_model(k, sample_fraction=sample_fraction, retry=retry)
+            weights = m.weights
+            gaussians = [Gaussian(g.mean, g.cov.toArray()) for g in m.gaussiansDF.collect()]
+            log_likelihood = m.summary.logLikelihood
 
-            self.gmms[key] = GaussianMixtureModel(weights, gaussians, log_likelihood)
-
-        return self.gmms[key]
+        return GaussianMixtureModel(weights, gaussians, log_likelihood)
 
     def get_log_likelihood(self, k, retry=True):
         gmm = self.get_gmm(k, retry=retry)
@@ -162,11 +154,12 @@ class ModelingService(object):
 
         if key not in self.ll_samples:
             sample = []
-            sample_lock = Lock
+            sample_lock = Lock()
 
             def f():
                 gmm = self.get_gmm(k, sample_fraction=self.ll_sample_fraction)  # type: GaussianMixtureModel
-                lls = gmm.calc_stats()
+                data = self.mllib_training_data.sample(False, self.ll_sample_fraction)
+                lls = gmm.calc_stats(data)
                 sample_lock.acquire()
                 sample.append(lls)
                 sample_lock.release()
