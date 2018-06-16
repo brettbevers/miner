@@ -30,10 +30,6 @@ def forwardSelectionIterationToDict(data):
 
 
 class GaussianMixtureModelMinerState(object):
-    PRESELECTION_ALPHA = 0.2
-    FORWARD_SELECTION_ALPHA = 0.01
-    FINAL_SELECTION_ALPHA = 0.01
-
     @classmethod
     def load_or_initialize(cls, fs_adapter, savepath, baseFeatures):
         try:
@@ -71,15 +67,6 @@ class GaussianMixtureModelMinerState(object):
         if savepath:
             self.save(savepath, mode=mode)
 
-    def baseModelFeatures(self):
-        if len(self.forwardSelectionIterations) == 0:
-            raise Exception("Must complete at least one forward selection iteration")
-        lastIteration = self.forwardSelectionIterations[-1]
-        return [
-            f for p, f in zip(lastIteration['p-values'], lastIteration['features'])
-            if p < self.FORWARD_SELECTION_ALPHA
-        ]
-
 
 class GaussianMixtureModelMiner(SparseStandardScaler):
 
@@ -87,13 +74,14 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
                  min_iterations=20, max_features=12,
                  step_size=5, alpha=0.01, max_training_iterations=200,
                  memory=2, k_search_radius=2, initial_k_range=range(1, 5)):
+
+        super(GaussianMixtureModelMiner, self).__init__(sparseDataSet=sparseDataSet)
         if not state:
             state = GaussianMixtureModelMinerState(
               self.__class__._fields(sparseDataSet, columnFilter),
               fs_adapter=fs_adapter
             )
         self._state = state
-        self.sparseDataSet = sparseDataSet
         self.columnFilter = columnFilter
         self.min_iterations = min_iterations
         self.max_features = max_features
@@ -103,8 +91,6 @@ class GaussianMixtureModelMiner(SparseStandardScaler):
         self.memory = memory
         self.k_search_radius = k_search_radius
         self.initial_k_range = initial_k_range
-        self._standardized_columns = {}
-        self._standardized_data_set = None
 
     @classmethod
     def _fields(cls, sparseDataSet, columnFilter=None):

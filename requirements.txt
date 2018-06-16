@@ -1,8 +1,0 @@
-# standard dependencies
-findspark==1.1.0
-mock==2.0.0
-python-dateutil
-
-# DSC Libraries
--e git+https://dsc-u-d-1:cff6380bf67129cbdfb00c739633fdefc89775c2@github.com/dollarshaveclub/pipes.git@master#egg=dsc_pipes
--e git+https://dsc-u-d-1:cff6380bf67129cbdfb00c739633fdefc89775c2@github.com/dollarshaveclub/ml-bme-scoring.git@master#egg=ml_bme_scoring
