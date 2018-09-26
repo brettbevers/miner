@@ -19,7 +19,7 @@ services:
   master:
     build:
       context: .
-      #      dockerfile: Dockerfile_tensorflow
+#      dockerfile: Dockerfile_tensorflow
       dockerfile: Dockerfile
     command: start-notebook.sh --NotebookApp.token=''
     hostname: master
@@ -29,3 +29,4 @@ services:
       - ./work:/home/jovyan/work
       - ./gmm:/usr/local/spark/python/gmm
       - ./gmm_test:/usr/local/spark/python/gmm_test
+      - ./hyperspherical_vae:/usr/local/spark/python/hyperspherical_vae
