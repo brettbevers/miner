@@ -1,0 +1,357 @@
+,age,bldg_sf,coverage,land_area_sf,price_per_sf,price_per_sf_land,property_address,property_city,property_county,property_state,property_street_name,property_street_number,property_zip_code,propertytype,sale_date,sale_price,submarket_name,year_built
+0,52,25308,0.24625624,102771,2370.23,583.68,3880-3896 Cross Creek Rd (Part of Multi-Property Sale),Malibu,Los Angeles,CA,Cross Creek Rd,3880,90265,Retail (Neighborhood Center),5/27/14,59985779,Pacific Palisades/Malibu,1966
+1,46,17116,0.242549634,70567,2370.23,574.9,3822-3844 Cross Creek Rd (Part of Multi-Property Sale),Malibu,Los Angeles,CA,Cross Creek Rd,3822,90265,Retail (Neighborhood Center),5/27/14,40568855,Pacific Palisades/Malibu,1972
+2,52,25308,0.24625624,102771,1520.9,374.53,3880-3896 Cross Creek Rd (Part of Multi-Property Sale),Malibu,Los Angeles,CA,Cross Creek Rd,3880,90265,Retail (Neighborhood Center),7/20/11,38490875,Pacific Palisades/Malibu,1966
+3,9,26512,0.037407519,537138,1118.5,55.21,3939 Cross Creek Rd (Part of Multi-Property Sale),Malibu,Los Angeles,CA,Cross Creek Rd,3939,90265,Retail (Neighborhood Center),6/26/12,29653612,Pacific Palisades/Malibu,2009
+4,38,28557,0.240122092,118927,976.29,234.43,6261-6263 Topanga Canyon Blvd,Woodland Hills,Los Angeles,CA,Topanga Canyon Blvd,6261,91367,Retail (Neighborhood Center),2/9/16,27880000,Woodland Hills/Warner Ctr,1980
+5,46,17116,0.242549634,70567,1520.9,368.89,3822-3844 Cross Creek Rd (Part of Multi-Property Sale),Malibu,Los Angeles,CA,Cross Creek Rd,3822,90265,Retail (Neighborhood Center),7/20/11,26031682,Pacific Palisades/Malibu,1972
+6,22,43138,0.19727353,218671,483.33,95.35,1934 E Avenida De Los Arboles,Thousand Oaks,Ventura,CA,Avenida De Los Arboles,1934,91362,Retail (Neighborhood Center),12/2/15,20850000,Thousand Oaks/SE County,1996
+7,38,38095,0.2350872,81021,527.12,247.84,2900 Townsgate Rd (Part of Multi-Property Sale),Thousand Oaks,Ventura,CA,Townsgate Rd,2900,91361,Retail (Neighborhood Center),2/25/16,20080532,Thousand Oaks/SE County,1980
+8,22,49690,0.274873599,180774,387.63,106.55,24955-24963 Pico Canyon Rd (Part of Multi-Property Sale),Stevenson Ranch,Los Angeles,CA,Pico Canyon Rd,24955,91381,Retail (Community Center),4/12/16,19261235,Santa Clarita Valley,1996
+9,31,43151,0.21819662,197762,444,96.88,24237-24445 Magic Mountain Pky (Part of Multi-Property Sale),Valencia,Los Angeles,CA,Magic Mountain Pky,24237,91355,Retail (Community Center),9/20/17,19159045,Santa Clarita Valley,1987
+10,45,38609,0.292078646,132187,481.49,140.63,2040 Glenoaks Blvd,San Fernando,Los Angeles,CA,Glenoaks Blvd,2040,91340,Retail (Neighborhood Center),10/28/14,18590000,Eastern SFV,1973
+11,51,39867,0.303053569,131551,459.98,139.4,22631-22645 Ventura Blvd (Part of Multi-Property Sale),Woodland Hills,Los Angeles,CA,Ventura Blvd,22631,91364,Retail (Neighborhood Center),8/21/15,18338086,Woodland Hills/Warner Ctr,1967
+12,39,40625,0.309656644,124215,423.38,138.47,16040 Sherman Way,Van Nuys,Los Angeles,CA,Sherman Way,16040,91406,Retail,4/25/18,17200000,Eastern SFV,1979
+13,32,45680,0.005662687,58806,372.37,289.26,18645-18663 Ventura Blvd,Tarzana,Los Angeles,CA,Ventura Blvd,18645,91356,Retail,10/22/15,17010000,Tarzana,1986
+14,58,31500,0.478905359,65775,533.33,255.41,4550-4578 Van Nuys Blvd,Sherman Oaks,Los Angeles,CA,Van Nuys Blvd,4550,91403,Retail (Neighborhood Center),5/15/14,16800000,Sherman Oaks,1960
+15,22,43138,0.19727353,218671,388.29,76.6,1934 E Avenida De Los Arboles,Thousand Oaks,Ventura,CA,Avenida De Los Arboles,1934,91362,Retail (Neighborhood Center),5/26/15,16750000,Thousand Oaks/SE County,1996
+16,9,13386,0.262182701,51056,1170.55,306.89,550 N Ventu Park Rd,Newbury Park,Ventura,CA,Ventu Park Rd,550,91320,Retail (Neighborhood Center),12/18/15,15669000,Thousand Oaks/SE County,2009
+17,59,43017,0.542602707,79279,351.03,190.47,17020 Chatsworth St (Part of Multi-Property Sale),Granada Hills,Los Angeles,CA,Chatsworth St,17020,91344,Retail (Neighborhood Center),3/31/15,15100207,Western SFV,1959
+18,32,48000,0.288463272,166399,305.68,88.18,5682-5688 Telephone Rd (Part of Multi-Property Sale),Ventura,Ventura,CA,Telephone Rd,5682,93003,Retail (Neighborhood Center),10/3/14,14672627,Ventura,1986
+19,43,33536,0.37555573,89297,428.53,160.93,19332-19344 Nordhoff St (Part of Multi-Property Sale),Northridge,Los Angeles,CA,Nordhoff St,19332,91324,Retail (Community Center),3/4/15,14371036,Western SFV,1975
+20,51,39867,0.303053569,131551,354.52,107.44,22631-22645 Ventura Blvd (Part of Multi-Property Sale),Woodland Hills,Los Angeles,CA,Ventura Blvd,22631,91364,Retail (Neighborhood Center),8/29/12,14133745,Woodland Hills/Warner Ctr,1967
+21,17,23186,0.184819692,125452,602.71,111.39,1015-1025 Broadbeck Dr,Newbury Park,Ventura,CA,Broadbeck Dr,1015,91320,Retail (Power Center),5/22/15,13974500,Thousand Oaks/SE County,2001
+22,22,35000,0.299342302,116923,387.63,116.03,24945 Pico Canyon Rd (Part of Multi-Property Sale),Stevenson Ranch,Los Angeles,CA,Pico Canyon Rd,24945,91381,Retail (Community Center),4/12/16,13566979,Santa Clarita Valley,1996
+23,27,37969,0.274656038,138242,356.73,97.98,604-630 Lindero Canyon Rd (Part of Multi-Property Sale),Oak Park,Ventura,CA,Lindero Canyon Rd,604,91377,Retail (Neighborhood Center),12/15/16,13544791,Moorpark/Simi Valley,1991
+24,47,28241,0.269903469,52315,467.03,252.11,20929 Ventura Blvd (Part of Multi-Property Sale),Woodland Hills,Los Angeles,CA,Ventura Blvd,20929,91364,Retail (Neighborhood Center),6/9/16,13189329,Woodland Hills/Warner Ctr,1971
+25,53,49642,0.320931465,154681,261.63,83.97,6725-6735 Fallbrook Ave (Part of Multi-Property Sale),West Hills,Los Angeles,CA,Fallbrook Ave,6725,91307,Retail (Power Center),6/13/14,12987841,Woodland Hills/Warner Ctr,1965
+26,47,27528,0.269655429,50991,467.03,252.13,20929 Ventura Blvd (Part of Multi-Property Sale),Woodland Hills,Los Angeles,CA,Ventura Blvd,20929,91364,Retail (Neighborhood Center),6/9/16,12856338,Woodland Hills/Warner Ctr,1971
+27,68,22125,0.051617946,428630,576.65,29.77,30745 Pacific Coast Hwy (Part of Multi-Property Sale),Malibu,Los Angeles,CA,Pacific Coast Hwy,30745,90265,Retail (Neighborhood Center),6/17/10,12758434,Pacific Palisades/Malibu,1950
+28,38,28557,0.240122092,118927,429.55,103.14,6261-6263 Topanga Canyon Blvd (Part of Multi-Property Sale),Woodland Hills,Los Angeles,CA,Topanga Canyon Blvd,6261,91367,Retail (Neighborhood Center),9/3/13,12266753,Woodland Hills/Warner Ctr,1980
+29,60,31272,0.312136305,100187,387.73,121.02,8908-8936 Glenoaks Blvd,Sun Valley,Los Angeles,CA,Glenoaks Blvd,8908,91352,Retail (Neighborhood Center),10/25/16,12125000,Eastern SFV,1958
+30,27,28194,0.23622166,119354,421.18,99.49,1125-1145 Lindero Canyon Rd (Part of Multi-Property Sale),Westlake Village,Ventura,CA,Lindero Canyon Rd,1125,91362,Retail (Community Center),8/29/16,11874680,Thousand Oaks/SE County,1991
+31,16,45052,0.351966,128001,261.63,92.08,6501 Fallbrook Ave (Part of Multi-Property Sale),West Hills,Los Angeles,CA,Fallbrook Ave,6501,91307,Retail (Power Center),6/13/14,11786959,Woodland Hills/Warner Ctr,2002
+32,30,37482,0.316349181,118483,312.15,98.75,1460-1494 Madera Rd,Simi Valley,Ventura,CA,Madera Rd,1460,93065,Retail (Neighborhood Center),2/1/16,11700000,Moorpark/Simi Valley,1988
+33,33,32828,0.23944566,137100,350.67,83.97,6701 Fallbrook Ave (Part of Multi-Property Sale),West Hills,Los Angeles,CA,Fallbrook Ave,6701,91307,Retail (Power Center),6/13/14,11511724,Woodland Hills/Warner Ctr,1985
+34,67,32864,0.295470484,111226,347.42,102.65,6601 Laurel Canyon Blvd (Part of Portfolio),North Hollywood,Los Angeles,CA,Laurel Canyon Blvd,6601,91606,Retail (Neighborhood Center),12/27/11,11417551,North Hollywood,1951
+35,27,20102,0.13576727,81021,564.62,140.09,22601 Pacific Coast Hwy,Malibu,Los Angeles,CA,Pacific Coast Hwy,22601,90265,Retail,3/9/12,11350000,Pacific Palisades/Malibu,1991
+36,59,43017,0.542602707,79279,262.99,142.7,17020 Chatsworth St (Part of Multi-Property Sale),Granada Hills,Los Angeles,CA,Chatsworth St,17020,91344,Retail (Neighborhood Center),5/10/11,11313130,Western SFV,1959
+37,23,46840,0.188648849,248292,239.11,45.11,2300 N Rose Ave,Oxnard,Ventura,CA,Rose Ave,2300,93036,Retail (Community Center),4/11/14,11200000,Oxnard/Port Hueneme,1995
+38,51,30000,0.177515843,168999,366.67,65.09,5201 Van Nuys Blvd,Sherman Oaks,Los Angeles,CA,Van Nuys Blvd,5201,91403,Retail,8/2/12,11000000,Eastern SFV,1967
+39,10,38712,0.17917494,216057,280.9,50.33,144 W Los Angeles Ave (Part of Multi-Property Sale),Moorpark,Ventura,CA,Los Angeles Ave,144,93021,Retail (Neighborhood Center),12/1/16,10874317,Moorpark/Simi Valley,2008
+40,20,25950,0.190939392,135907,405.68,77.46,706 Lindero Canyon Rd (Part of Multi-Property Sale),Oak Park,Ventura,CA,Lindero Canyon Rd,706,91377,Retail (Strip Center),3/31/17,10527295,Moorpark/Simi Valley,1998
+41,53,21466,0.195467087,109819,481.95,94.21,8420 Reseda Blvd (Part of Multi-Property Sale),Northridge,Los Angeles,CA,Reseda Blvd,8420,91324,Retail,12/22/17,10345516,Western SFV,1965
+42,20,25950,0.190939392,135907,395.51,75.52,706 Lindero Canyon Rd (Part of Multi-Property Sale),Oak Park,Ventura,CA,Lindero Canyon Rd,706,91377,Retail (Strip Center),3/30/16,10263581,Moorpark/Simi Valley,1998
+43,15,15748,0.123218966,127805,650.23,80.12,100 Del Norte Blvd (Part of Multi-Property Sale),Oxnard,Ventura,CA,Del Norte Blvd,100,93030,Retail,12/16/14,10239868,Oxnard/Port Hueneme,2003
+44,13,27224,0.438058152,62147,368.36,161.36,16107 Victory Blvd (Part of Multi-Property Sale),Van Nuys,Los Angeles,CA,Victory Blvd,16107,91406,Retail,9/8/16,10028108,Eastern SFV,2005
+45,45,45429,0.294607074,154202,215.72,63.55,23300-23314 Valencia Blvd,Valencia,Los Angeles,CA,Valencia Blvd,23300,91355,Retail,2/7/18,9800000,Santa Clarita Valley,1973
+46,14,32450,0.837030541,38768,300.22,251.29,20539 Ventura Blvd (Part of Multi-Property Sale),Woodland Hills,Los Angeles,CA,Ventura Blvd,20539,91364,Retail,6/30/11,9742044,Woodland Hills/Warner Ctr,2004
+47,16,16145,0.242250098,66646,603.39,146.17,5227-5257 Mission Oaks Blvd (Part of Multi-Property Sale),Camarillo,Ventura,CA,Mission Oaks Blvd,5227,93012,Retail (Neighborhood Center),4/27/18,9741703,Camarillo/Point Mugu,2002
+48,19,26186,0.380146333,34442,371.5,282.44,24510 Town Center Dr,Valencia,Los Angeles,CA,Town Center Dr,24510,91355,Retail (Strip Center),12/22/16,9728000,Santa Clarita Valley,1999
+49,8,12500,0.141583699,88287,768.25,108.77,28941 Canwood St (Part of Multi-Property Sale),Agoura Hills,Los Angeles,CA,Canwood St,28941,91301,Retail (Neighborhood Center),4/1/15,9603161,Calabasas/Westlake Vill,2010
+50,34,41850,0.438697639,95396,228.49,100.24,19510-19520 Nordhoff St,Northridge,Los Angeles,CA,Nordhoff St,19510,91324,Retail (Neighborhood Center),9/17/12,9562500,Western SFV,1984
+51,15,10129,0.289185177,35026,918.69,265.67,1145 S Victoria Ave (Part of Multi-Property Sale),Ventura,Ventura,CA,Victoria Ave,1145,93003,Retail (Neighborhood Center),5/11/18,9305400,Ventura,2003
+52,34,20085,0.333521529,60221,458.2,152.82,10970 Sherman Way (Part of Multi-Property Sale),Burbank,Los Angeles,CA,Sherman Way,10970,91505,Retail (Community Center),10/17/17,9203004,Eastern SFV,1984
+53,21,32343,0.27297587,118483,284.45,77.65,23460 Cinema Dr,Valencia,Los Angeles,CA,Cinema Dr,23460,91355,Retail (Strip Center),3/1/18,9200000,Santa Clarita Valley,1997
+54,45,45429,0.294607074,154202,200.31,59.01,23300-23314 Valencia Blvd,Valencia,Los Angeles,CA,Valencia Blvd,23300,91355,Retail,9/10/15,9100000,Santa Clarita Valley,1973
+55,49,24500,0.112488522,217800,367.35,41.32,3839 Auto Mall Dr,Thousand Oaks,Ventura,CA,Auto Mall Dr,3839,91362,Retail,7/8/11,9000000,Thousand Oaks/SE County,1969
+56,28,13424,0.411337521,32635,663.48,272.91,21851-21857 Ventura Blvd (Part of Multi-Property Sale),Woodland Hills,Los Angeles,CA,Ventura Blvd,21851,91364,Retail (Neighborhood Center),12/31/15,8906532,Woodland Hills/Warner Ctr,1990
+57,38,26000,0.234992137,110642,340.38,79.99,2655 Erringer Rd,Simi Valley,Ventura,CA,Erringer Rd,2655,93065,Retail (Strip Center),6/22/17,8850000,Moorpark/Simi Valley,1980
+58,63,41644,0.637343128,32670,204.11,260.18,6418-6446 Bellingham St,North Hollywood,Los Angeles,CA,Bellingham St,6418,91606,Retail (Neighborhood Center),9/28/15,8500000,North Hollywood,1955
+59,24,14490,0.326123652,44431,586.61,191.31,481 S Ventura Rd (Part of Portfolio),Oxnard,Ventura,CA,Ventura Rd,481,93030,Retail (Neighborhood Center),6/24/16,8500000,Oxnard/Port Hueneme,1994
+60,28,10140,0.223831177,45302,833.41,186.54,3955 E Thousand Oaks Blvd (Part of Multi-Property Sale),Westlake Village,Ventura,CA,Thousand Oaks Blvd,3955,91362,Retail (Community Center),6/20/16,8450803,Thousand Oaks/SE County,1990
+61,23,40960,0.25176407,162692,202.48,50.98,23630 Valencia Blvd (Part of Multi-Property Sale),Valencia,Los Angeles,CA,Valencia Blvd,23630,91355,Retail (Neighborhood Center),5/2/16,8293760,Santa Clarita Valley,1995
+62,43,17144,0.343732456,49876,481.22,165.41,6424 Canoga Ave,Woodland Hills,Los Angeles,CA,Canoga Ave,6424,91367,Retail,10/30/15,8250000,Woodland Hills/Warner Ctr,1975
+63,34,20583,0.245978632,83678,398.18,97.94,1960-1970 N Sequoia Ave (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Sequoia Ave,1960,93063,Retail (Strip Center),8/17/15,8195794,Moorpark/Simi Valley,1984
+64,68,33512,0.232714142,144005,244.1,56.8,26111 Bouquet Canyon Rd (Part of Multi-Property Sale),Santa Clarita,Los Angeles,CA,Bouquet Canyon Rd,26111,91350,Retail (Neighborhood Center),1/5/18,8180177,Santa Clarita Valley,1950
+65,8,14870,0.120022923,123893,544.72,65.38,1205 S Oxnard Blvd,Oxnard,Ventura,CA,Oxnard Blvd,1205,93030,Retail (Neighborhood Center),3/21/16,8100000,Oxnard/Port Hueneme,2010
+66,23,40960,0.25176407,162692,195.31,49.17,23630 Valencia Blvd,Valencia,Los Angeles,CA,Valencia Blvd,23630,91355,Retail (Neighborhood Center),9/23/10,8000000,Santa Clarita Valley,1995
+67,20,30000,0.288162293,104108,266.17,76.7,5766 Lindero Canyon Rd (Part of Portfolio),Westlake Village,Los Angeles,CA,Lindero Canyon Rd,5766,91362,Retail (Community Center),7/21/11,7985034,Calabasas/Westlake Vill,1998
+68,38,30000,0.195655151,153331,263.5,51.55,660 E Los Angeles Ave (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Los Angeles Ave,660,93065,Retail (Neighborhood Center),10/12/15,7904942,Moorpark/Simi Valley,1980
+69,58,26172,0.492491814,26571,299.25,294.75,14515-14539 Ventura Blvd (Part of Portfolio),Sherman Oaks,Los Angeles,CA,Ventura Blvd,14515,91403,Retail (Strip Center),9/17/14,7831908,Sherman Oaks,1960
+70,39,32681,0.250274868,113691,238.67,68.61,23901 Creekside Rd,Valencia,Los Angeles,CA,Creekside Rd,23901,91355,Retail,12/14/16,7800000,Santa Clarita Valley,1979
+71,46,17787,0.352650779,50438,428.53,151.12,19320 Nordhoff St (Part of Multi-Property Sale),Northridge,Los Angeles,CA,Nordhoff St,19320,91324,Retail (Community Center),3/4/15,7622186,Western SFV,1972
+72,67,15400,0.312233892,49322,494.35,154.35,3708 W Burbank Blvd (Part of Portfolio),Burbank,Los Angeles,CA,Burbank Blvd,3708,91505,Retail,12/27/11,7612944,Burbank,1951
+73,11,19556,0.203732526,70676,388.63,107.53,252 W Los Angeles Ave,Moorpark,Ventura,CA,Los Angeles Ave,252,93021,Retail (Strip Center),6/7/17,7600000,Moorpark/Simi Valley,2007
+74,31,16962,0.239127064,70933,444.94,106.4,2941 Cochran St (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Cochran St,2941,93065,Retail (Community Center),5/17/16,7547094,Moorpark/Simi Valley,1987
+75,8,12500,0.141583699,88287,600,84.95,28941 Canwood St (Part of Multi-Property Sale),Agoura Hills,Los Angeles,CA,Canwood St,28941,91301,Retail (Neighborhood Center),3/30/12,7500000,Calabasas/Westlake Vill,2010
+76,59,26801,0.416711133,31859,279.84,235.41,17107 Ventura Blvd,Encino,Los Angeles,CA,Ventura Blvd,17107,91316,Retail,6/4/10,7500000,Encino,1959
+77,24,25150,0.358614593,70131,297.33,106.63,4300 E Main St (Part of Multi-Property Sale),Ventura,Ventura,CA,Main St,4300,93003,Retail (Neighborhood Center),6/30/16,7477819,Ventura,1994
+78,32,24350,0.288619958,84367,305.68,88.23,5722 Telephone Rd (Part of Multi-Property Sale),Ventura,Ventura,CA,Telephone Rd,5722,93003,Retail (Neighborhood Center),10/3/14,7443301,Ventura,1986
+79,42,24937,0.289131342,86248,297.33,85.97,4360 E Main St (Part of Multi-Property Sale),Ventura,Ventura,CA,Main St,4360,93003,Retail (Neighborhood Center),6/30/16,7414488,Ventura,1976
+80,21,32343,0.27297587,118483,228.02,62.25,23460 Cinema Dr,Valencia,Los Angeles,CA,Cinema Dr,23460,91355,Retail (Strip Center),7/24/14,7375000,Santa Clarita Valley,1997
+81,63,27498,0.872896959,31502,261.84,228.55,8400 Van Nuys Blvd,Panorama City,Los Angeles,CA,Van Nuys Blvd,8400,91402,Retail (Community Center),8/2/16,7200000,Eastern SFV,1955
+82,43,13265,0.349584926,37945,527.7,184.48,13305-13329 Moorpark St,Sherman Oaks,Los Angeles,CA,Moorpark St,13305,91423,Retail (Strip Center),2/15/17,7000000,Sherman Oaks,1975
+83,16,28718,0.174412108,164656,241.13,42.06,1775 E Daily Dr (Part of Multi-Property Sale),Camarillo,Ventura,CA,Daily Dr,1775,93010,Retail (Neighborhood Center),10/30/13,6924747,Camarillo/Point Mugu,2002
+84,19,26186,0.380146333,34442,263.5,200.33,24510 Town Center Dr,Valencia,Los Angeles,CA,Town Center Dr,24510,91355,Retail (Strip Center),10/22/13,6900000,Santa Clarita Valley,1999
+85,28,19300,0.317090001,60866,356.73,113.12,668-686 Lindero Canyon Rd (Part of Multi-Property Sale),Oak Park,Ventura,CA,Lindero Canyon Rd,668,91377,Retail (Neighborhood Center),12/15/16,6884945,Moorpark/Simi Valley,1990
+86,32,29511,0.157315649,187591,232.77,36.62,18533-18569 Soledad Canyon Rd (Part of Multi-Property Sale),Canyon Country,Los Angeles,CA,Soledad Canyon Rd,18533,91351,Retail (Neighborhood Center),10/6/17,6869271,Santa Clarita Valley,1986
+87,46,17787,0.352650779,50438,383.26,135.16,19320 Nordhoff St (Part of Multi-Property Sale),Northridge,Los Angeles,CA,Nordhoff St,19320,91324,Retail (Community Center),8/16/12,6817090,Western SFV,1972
+88,24,46000,0.401529303,114562,148.17,59.5,8700 Tampa Ave,Northridge,Los Angeles,CA,Tampa Ave,8700,91324,Retail,5/24/12,6816000,Western SFV,1994
+89,60,28323,0.472057868,59999,238.32,112.5,19616 Ventura Blvd,Tarzana,Los Angeles,CA,Ventura Blvd,19616,91356,Retail,3/11/14,6750000,Tarzana,1958
+90,28,18816,0.315297351,59677,350.8,110.61,4952-4994 Verdugo Way (Part of Multi-Property Sale),Camarillo,Ventura,CA,Verdugo Way,4952,93012,Retail (Neighborhood Center),3/16/17,6600627,Camarillo/Point Mugu,1990
+91,37,28050,0.322213798,87054,235.11,75.76,8742-8768 Corbin Ave (Part of Multi-Property Sale),Northridge,Los Angeles,CA,Corbin Ave,8742,91324,Retail (Community Center),5/18/17,6594922,Western SFV,1981
+92,53,43767,0.215772115,67613,150.32,97.31,6241-6255 Laurel Canyon Blvd (Part of Multi-Property Sale),North Hollywood,Los Angeles,CA,Laurel Canyon Blvd,6241,91606,Retail,12/10/15,6579274,North Hollywood,1965
+93,17,14715,0.239583842,61419,445.12,106.64,2303 E Vineyard Ave,Oxnard,Ventura,CA,Vineyard Ave,2303,93036,Retail,8/29/14,6550000,Oxnard/Port Hueneme,2001
+94,28,18580,0.217623013,85377,350.8,76.34,4910-4950 Verdugo Way (Part of Multi-Property Sale),Camarillo,Ventura,CA,Verdugo Way,4910,93012,Retail (Neighborhood Center),3/16/17,6517838,Camarillo/Point Mugu,1990
+95,54,13800,0.20826102,66263,463.41,96.51,5835 Sepulveda Blvd,Van Nuys,Los Angeles,CA,Sepulveda Blvd,5835,91411,Retail,3/20/15,6395000,Eastern SFV,1964
+96,61,11331,0.307331362,36869,564.36,173.44,20901-20915 Sherman Way (Part of Multi-Property Sale),Canoga Park,Los Angeles,CA,Sherman Way,20901,91303,Retail (Strip Center),6/29/17,6394742,Western SFV,1957
+97,45,41431,0.301590537,137375,153.88,46.41,4833-4917 Rose Ave (Part of Multi-Property Sale),Oxnard,Ventura,CA,Rose Ave,4833,93033,Retail (Neighborhood Center),12/4/14,6375546,Oxnard/Port Hueneme,1973
+98,35,10467,0.438812728,23853,606.67,266.21,19255 Ventura Blvd,Tarzana,Los Angeles,CA,Ventura Blvd,19255,91356,Retail,11/25/15,6350000,Tarzana,1983
+99,28,20500,0.392675171,52206,308.54,121.15,6115 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,6115,91401,Retail,12/11/14,6325000,Eastern SFV,1990
+100,45,12980,0.480616137,27007,486.75,233.94,2010-2040 Glenoaks Blvd,San Fernando,Los Angeles,CA,Glenoaks Blvd,2010,91340,Retail (Neighborhood Center),12/24/15,6318000,Eastern SFV,1973
+101,31,23494,0.352519281,66646,268.15,94.53,23360-23380 Valencia Blvd,Valencia,Los Angeles,CA,Valencia Blvd,23360,91355,Retail (Strip Center),8/25/15,6300000,Santa Clarita Valley,1987
+102,26,30629,1.790122735,17110,404.79,724.61,24201 Valencia Blvd (Part of Multi-Property Sale),Valencia,Los Angeles,CA,Valencia Blvd,24201,91355,Retail,12/19/12,6199187,Santa Clarita Valley,1992
+103,68,20500,0.461399955,22215,297.56,274.58,6723 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,6723,91405,Retail,12/29/17,6100000,Eastern SFV,1950
+104,37,36800,0.244872972,150282,165.76,40.59,115 W Main St,Ventura,Ventura,CA,Main St,115,93001,Retail (Neighborhood Center),3/23/15,6100000,Ventura,1981
+105,64,18915,0.443774488,42623,322.5,143.11,6514 Lankershim Blvd,North Hollywood,Los Angeles,CA,Lankershim Blvd,6514,91606,Retail,10/5/17,6100000,North Hollywood,1954
+106,12,24480,0.217824601,112384,248.57,54.14,1263 Simi Town Center Way,Simi Valley,Ventura,CA,Simi Town Center Way,1263,93065,Retail (Community Center),5/24/12,6085000,Moorpark/Simi Valley,2006
+107,13,30624,0.248422214,123274,197.56,49.08,1189 Simi Town Center Way,Simi Valley,Ventura,CA,Simi Town Center Way,1189,93065,Retail (Community Center),12/8/15,6050000,Moorpark/Simi Valley,2005
+108,9,29869,1.789956253,16687,404.79,724.52,24201 Valencia Blvd (Part of Multi-Property Sale),Valencia,Los Angeles,CA,Valencia Blvd,24201,91355,Retail,12/19/12,6045366,Santa Clarita Valley,2009
+109,10,15870,0.260240727,30491,378.07,196.77,6005 Vineland Ave,North Hollywood,Los Angeles,CA,Vineland Ave,6005,91606,Retail,5/3/18,6000000,North Hollywood,2008
+110,12,28800,0.210560178,136778,208.33,43.87,23780 Newhall Ave,Santa Clarita,Los Angeles,CA,Newhall Ave,23780,91321,Retail (Neighborhood Center),4/11/16,6000000,Santa Clarita Valley,2006
+111,59,30295,0.241494484,125448,198.05,47.83,10919 Sepulveda Blvd,San Fernando,Los Angeles,CA,Sepulveda Blvd,10919,91345,Retail,1/8/14,6000000,Eastern SFV,1959
+112,68,31185,0.336110452,92782,189.71,63.76,1452-1496 E Los Angeles Ave (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Los Angeles Ave,1452,93065,Retail (Strip Center),3/24/16,5916192,Moorpark/Simi Valley,1950
+113,31,10202,0.453019538,22520,574.4,260.21,13750-13758 Roscoe Blvd,Panorama City,Los Angeles,CA,Roscoe Blvd,13750,91402,Retail (Strip Center),11/16/15,5860000,Eastern SFV,1987
+114,31,15967,0.29814795,18682,360.12,307.77,28955 Pacific Coast Hwy,Malibu,Los Angeles,CA,Pacific Coast Hwy,28955,90265,Retail,2/28/14,5750000,Pacific Palisades/Malibu,1987
+115,54,46150,0.392391933,117612,124.5,48.85,6001 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,6001,91401,Retail,7/30/10,5745500,Eastern SFV,1964
+116,16,32374,0.00330769,9787496,176.07,0.58,26550 Heritage View Ln,Valencia,Los Angeles,CA,Heritage View Ln,26550,91381,Retail,1/30/18,5700000,Santa Clarita Valley,2002
+117,60,31272,0.312136305,100187,181.31,56.59,8908-8936 Glenoaks Blvd,Sun Valley,Los Angeles,CA,Glenoaks Blvd,8908,91352,Retail (Neighborhood Center),4/25/13,5670000,Eastern SFV,1958
+118,27,19481,0.240431965,81025,290.03,69.73,29020 Agoura Rd,Agoura Hills,Los Angeles,CA,Agoura Rd,29020,91301,Retail (Strip Center),12/17/14,5650000,Calabasas/Westlake Vill,1991
+119,33,30028,0.214123234,140237,187.33,40.11,5255 Cochran St,Simi Valley,Ventura,CA,Cochran St,5255,93063,Retail,9/25/14,5625000,Moorpark/Simi Valley,1985
+120,47,12000,0.539859636,22228,467.03,252.12,20929 Ventura Blvd (Part of Multi-Property Sale),Woodland Hills,Los Angeles,CA,Ventura Blvd,20929,91364,Retail (Neighborhood Center),6/9/16,5604332,Woodland Hills/Warner Ctr,1971
+121,65,15343,0.217874081,35213,359.07,156.45,17027-17031 Ventura Blvd (Part of Multi-Property Sale),Encino,Los Angeles,CA,Ventura Blvd,17027,91316,Retail,3/9/16,5509265,Encino,1953
+122,63,15800,0.144638313,54619,348.1,100.7,22333 Pacific Coast Hwy,Malibu,Los Angeles,CA,Pacific Coast Hwy,22333,90265,Retail,8/31/12,5500000,Pacific Palisades/Malibu,1955
+123,64,24862,0.441998969,56249,221.22,97.78,6569-6581 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,6569,91401,Retail,2/18/16,5500000,Eastern SFV,1954
+124,44,12427,0.176615218,70362,441.64,78,11846-11862 Balboa Blvd (Part of Multi-Property Sale),Granada Hills,Los Angeles,CA,Balboa Blvd,11846,91344,Retail (Neighborhood Center),12/11/13,5488306,Eastern SFV,1974
+125,13,35366,0.192960362,138956,152.69,38.86,2251 E Gonzales Rd,Oxnard,Ventura,CA,Gonzales Rd,2251,93036,Retail,11/16/15,5400000,Oxnard/Port Hueneme,2005
+126,62,22988,0.42629099,31197,234.91,173.09,8450 Van Nuys Blvd,Panorama City,Los Angeles,CA,Van Nuys Blvd,8450,91402,Retail (Community Center),12/30/10,5400000,Eastern SFV,1956
+127,15,23002,0.207895736,110642,233.68,48.58,1701 Auto Center Dr,Oxnard,Ventura,CA,Auto Center Dr,1701,93036,Retail,12/7/15,5375000,Oxnard/Port Hueneme,2003
+128,35,10467,0.438812728,23853,511.76,224.56,19255 Ventura Blvd (Part of Portfolio),Tarzana,Los Angeles,CA,Ventura Blvd,19255,91356,Retail,1/31/14,5356608,Tarzana,1983
+129,64,13201,0.139458045,46609,405.27,114.78,18260 Sherman Way,Reseda,Los Angeles,CA,Sherman Way,18260,91335,Retail,2/18/15,5350000,Western SFV,1954
+130,64,13070,0.284328228,45968,409.33,116.38,18260 Sherman Way,Reseda,Los Angeles,CA,Sherman Way,18260,91335,Retail,2/18/15,5350000,Western SFV,1954
+131,38,20000,0.239960646,83347,265.75,63.77,4001-4017 E Main St (Part of Multi-Property Sale),Ventura,Ventura,CA,Main St,4001,93003,Retail (Strip Center),8/8/14,5314961,Ventura,1980
+132,23,26211,0.125358701,209088,404.79,50.74,24250 Town Center Dr (Part of Multi-Property Sale),Valencia,Los Angeles,CA,Town Center Dr,24250,91355,Retail (Super Regional Mall),12/19/12,5305001,Santa Clarita Valley,1995
+133,37,19887,0.161888015,61419,266.51,86.29,3967 E Thousand Oaks Blvd,Westlake Village,Ventura,CA,Thousand Oaks Blvd,3967,91362,Office,9/30/14,5300000,Thousand Oaks/SE County,1981
+134,53,12456,0.188821684,65967,425.5,80.34,6633 Topanga Canyon Blvd,Woodland Hills,Los Angeles,CA,Topanga Canyon Blvd,6633,91303,Retail,5/26/10,5300000,Woodland Hills/Warner Ctr,1965
+135,53,21466,0.195467087,109819,246.12,48.11,8420 Reseda Blvd (Part of Multi-Property Sale),Northridge,Los Angeles,CA,Reseda Blvd,8420,91324,Retail,3/27/15,5283141,Western SFV,1965
+136,32,26393,0.420782451,31363,199.25,167.67,27225 Camp Plenty Rd (Part of Multi-Property Sale),Santa Clarita,Los Angeles,CA,Camp Plenty Rd,27225,91351,Office (Strip Center),3/1/17,5258744,Santa Clarita Valley,1986
+137,27,14729,0.317107303,46448,356.73,113.12,634-652 Lindero Canyon Rd (Part of Multi-Property Sale),Oak Park,Ventura,CA,Lindero Canyon Rd,634,91377,Retail (Neighborhood Center),12/15/16,5254319,Moorpark/Simi Valley,1991
+138,47,12600,0.567184335,22215,414.29,234.97,19662 Nordhoff St (Part of Multi-Property Sale),Northridge,Los Angeles,CA,Nordhoff St,19662,91324,Retail (Strip Center),5/22/14,5220033,Western SFV,1971
+139,66,39464,0.383532888,51448,131.77,101.07,18333-18345 Sherman Way,Reseda,Los Angeles,CA,Sherman Way,18333,91335,Retail,10/15/15,5200000,Western SFV,1952
+140,37,15016,0.485530443,30927,346.3,168.13,7201-7227 Balboa Blvd,Van Nuys,Los Angeles,CA,Balboa Blvd,7201,91406,Retail (Strip Center),7/30/13,5200000,Eastern SFV,1981
+141,65,22861,0.341412784,66960,227.46,77.66,1199 E Thompson Blvd,Ventura,Ventura,CA,Thompson Blvd,1199,93001,Retail,12/1/17,5200000,Ventura,1953
+142,24,20173,0.207673619,97138,256.94,53.36,421 S Ventura Rd (Part of Multi-Property Sale),Oxnard,Ventura,CA,Ventura Rd,421,93030,Retail (Neighborhood Center),1/3/14,5183344,Oxnard/Port Hueneme,1994
+143,33,14464,0.56994247,25378,356.06,202.93,22982-23010 Ventura Blvd,Woodland Hills,Los Angeles,CA,Ventura Blvd,22982,91364,Retail (Strip Center),8/24/15,5150000,Woodland Hills/Warner Ctr,1985
+144,55,29000,0.179931998,161172,177.59,31.95,3440 E Main St,Ventura,Ventura,CA,Main St,3440,93003,Retail,11/29/16,5150000,Ventura,1963
+145,12,24480,0.217824601,112384,207.6,45.22,1263 Simi Town Center Way,Simi Valley,Ventura,CA,Simi Town Center Way,1263,93065,Retail (Community Center),8/10/11,5082000,Moorpark/Simi Valley,2006
+146,44,11495,0.168835556,68084,441.64,74.56,11850-11854 Balboa Blvd (Part of Multi-Property Sale),Granada Hills,Los Angeles,CA,Balboa Blvd,11850,91344,Retail (Neighborhood Center),12/11/13,5076694,Eastern SFV,1974
+147,55,20995,0.217108052,96703,240.53,52.22,21422 Roscoe Blvd,Canoga Park,Los Angeles,CA,Roscoe Blvd,21422,91304,Retail,6/1/16,5050000,Western SFV,1963
+148,30,21121,0.484871442,43560,239.1,115.93,2100 1st St,Simi Valley,Ventura,CA,1st St,2100,93065,Retail,6/15/16,5050000,Moorpark/Simi Valley,1988
+149,58,22500,0.258264463,87120,222.22,57.39,11675 Glenoaks Blvd,Pacoima,Los Angeles,CA,Glenoaks Blvd,11675,91331,Retail,11/9/10,5000000,Eastern SFV,1960
+150,40,17000,0.402338296,42253,294.12,118.33,10211 Balboa Blvd,Northridge,Los Angeles,CA,Balboa Blvd,10211,91325,Retail,5/15/14,5000000,Western SFV,1978
+151,55,20995,0.217108052,96703,238.15,51.7,21422 Roscoe Blvd,Canoga Park,Los Angeles,CA,Roscoe Blvd,21422,91304,Retail,11/16/15,5000000,Western SFV,1963
+152,35,19720,0.573055911,34412,253.55,145.3,14417 Roscoe Blvd,Van Nuys,Los Angeles,CA,Roscoe Blvd,14417,91402,Retail,11/5/12,5000000,Eastern SFV,1983
+153,15,17556,0,64503,284.8,77.51,24055 Magic Mountain Pky,Valencia,Los Angeles,CA,Magic Mountain Pky,24055,91355,Retail,6/9/15,5000000,Santa Clarita Valley,2003
+154,41,11782,0.221470328,53199,419.28,92.86,7111 Sepulveda Blvd,Van Nuys,Los Angeles,CA,Sepulveda Blvd,7111,91405,Retail,4/20/15,4940000,Eastern SFV,1977
+155,21,10988,0.301669229,18212,447.19,269.8,11335 Magnolia Blvd (Part of Multi-Property Sale),North Hollywood,Los Angeles,CA,Magnolia Blvd,11335,91601,Retail (Strip Center),8/21/17,4913671,North Hollywood,1997
+156,39,31223,0.215749141,144719,176.15,38,21615 Soledad Canyon Rd,Santa Clarita,Los Angeles,CA,Soledad Canyon Rd,21615,91350,Retail,3/1/16,4907000,Santa Clarita Valley,1979
+157,9,17340,1.443436277,12013,282.84,408.23,2480 Victoria Ave (Part of Multi-Property Sale),Port Hueneme,Ventura,CA,Victoria Ave,2480,93041,Retail (Neighborhood Center),9/16/16,4904364,Oxnard/Port Hueneme,2009
+158,64,13201,0.139458045,46609,371.22,105.14,18260 Sherman Way (Part of Portfolio),Reseda,Los Angeles,CA,Sherman Way,18260,91335,Retail,1/31/14,4900421,Western SFV,1954
+159,36,19000,0.233228994,81465,257.9,60.15,4756 Telephone Rd (Part of Multi-Property Sale),Ventura,Ventura,CA,Telephone Rd,4756,93003,Retail (Community Center),7/1/15,4900043,Ventura,1982
+160,32,14243,0.300185482,23722,344.03,206.55,13647-13667 Victory Blvd,Van Nuys,Los Angeles,CA,Victory Blvd,13647,91401,Retail (Strip Center),7/23/13,4900000,North Hollywood,1986
+161,22,30672,0.238447665,128632,157.54,37.57,24802-24840 Orchard Village Rd (Part of Multi-Property Sale),Santa Clarita,Los Angeles,CA,Orchard Village Rd,24802,91355,Retail (Neighborhood Center),12/19/14,4832095,Santa Clarita Valley,1996
+162,32,29511,0.157315649,187591,192.3,30.25,18533-18569 Soledad Canyon Rd (Part of Multi-Property Sale),Canyon Country,Los Angeles,CA,Soledad Canyon Rd,18533,91351,Retail (Neighborhood Center),6/28/13,4823755,Santa Clarita Valley,1986
+163,58,26236,0.435625809,60226,182.95,79.7,9118 Balboa Blvd,Northridge,Los Angeles,CA,Balboa Blvd,9118,91325,Retail,10/1/14,4800000,Eastern SFV,1960
+164,27,34582,0.441051933,39204,138.8,122.44,7335 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,7335,91405,Retail (Neighborhood Center),3/21/13,4800000,Eastern SFV,1991
+165,30,10803,0.195278466,55321,444,86.7,24445-24457 Magic Mountain Pky (Part of Multi-Property Sale),Valencia,Los Angeles,CA,Magic Mountain Pky,24445,91355,Retail (Community Center),9/20/17,4796532,Santa Clarita Valley,1988
+166,39,32681,0.250274868,113691,145.34,41.78,23901 Creekside Rd,Valencia,Los Angeles,CA,Creekside Rd,23901,91355,Retail,7/30/14,4750000,Santa Clarita Valley,1979
+167,32,15969,0.095947943,166434,297.33,28.53,4711 Telephone Rd (Part of Multi-Property Sale),Ventura,Ventura,CA,Telephone Rd,4711,93003,Retail,6/30/16,4748044,Ventura,1986
+168,22,12070,0.138544536,87120,387.63,53.7,24917-24931 Pico Canyon Rd (Part of Multi-Property Sale),Stevenson Ranch,Los Angeles,CA,Pico Canyon Rd,24917,91381,Retail (Community Center),4/12/16,4678670,Santa Clarita Valley,1996
+169,27,20701,0.301688128,57934,222.06,79.35,1125 Lindero Canyon Rd (Part of Multi-Property Sale),Westlake Village,Ventura,CA,Lindero Canyon Rd,1125,91362,Retail (Community Center),8/29/16,4596903,Thousand Oaks/SE County,1991
+170,48,15101,0.293371411,51474,304.03,89.19,10893 San Fernando Rd (Part of Portfolio),Pacoima,Los Angeles,CA,San Fernando Rd,10893,91331,Retail,12/27/11,4591090,Eastern SFV,1970
+171,48,21800,0.462413032,47144,206.88,95.66,18901 Soledad Canyon Rd,Canyon Country,Los Angeles,CA,Soledad Canyon Rd,18901,91351,Retail,6/1/12,4510000,Santa Clarita Valley,1970
+172,45,45429,0.294607074,154202,99.06,29.18,23300-23314 Valencia Blvd,Valencia,Los Angeles,CA,Valencia Blvd,23300,91355,Retail,12/29/10,4500000,Santa Clarita Valley,1973
+173,46,13242,0.186548082,35980,339.83,125.07,300 S Mills Rd,Ventura,Ventura,CA,Mills Rd,300,93003,Retail,11/29/12,4500000,Ventura,1972
+174,40,13929,0.313481882,22215,323.07,202.56,15611-15619 Ventura Blvd,Encino,Los Angeles,CA,Ventura Blvd,15611,91436,Retail (Strip Center),3/26/15,4500000,Encino,1978
+175,28,10161,0.431978573,23522,442.87,191.31,14103 Victory Blvd,Van Nuys,Los Angeles,CA,Victory Blvd,14103,91401,Retail (Strip Center),10/2/14,4500000,Eastern SFV,1990
+176,17,11835,0.288672618,40998,380.23,109.76,23310 Cinema Dr,Santa Clarita,Los Angeles,CA,Cinema Dr,23310,91355,Retail (Strip Center),9/18/15,4500000,Santa Clarita Valley,2001
+177,64,12776,0.381600956,33480,352.22,134.41,19744-19762 Sherman Way,Canoga Park,Los Angeles,CA,Sherman Way,19744,91306,Retail (Strip Center),1/10/17,4500000,Western SFV,1954
+178,33,15974,0.491916361,32473,277.01,136.26,12901-12925 Sherman Way,North Hollywood,Los Angeles,CA,Sherman Way,12901,91605,Retail (Strip Center),12/15/17,4425000,Eastern SFV,1985
+179,36,16567,0.204477851,81021,265.97,54.38,2222 W Hillcrest Dr (Part of Portfolio),Newbury Park,Ventura,CA,Hillcrest Dr,2222,91320,Retail,12/27/11,4406286,Thousand Oaks/SE County,1982
+180,25,20951,0.288006049,72745,208.82,60.14,305-393 W Los Angeles Ave (Part of Multi-Property Sale),Moorpark,Ventura,CA,Los Angeles Ave,305,93021,Retail (Community Center),9/2/15,4375000,Moorpark/Simi Valley,1993
+181,7,14002,0.714314866,19602,312.1,222.94,1117-1137 S Oxnard Blvd (Part of Portfolio),Oxnard,Ventura,CA,Oxnard Blvd,1117,93033,Retail (Neighborhood Center),4/25/16,4370022,Oxnard/Port Hueneme,2011
+182,11,15800,0.159788028,98881,275.32,43.99,1610 E Thousand Oaks Blvd,Thousand Oaks,Ventura,CA,Thousand Oaks Blvd,1610,91362,Retail,6/17/14,4350000,Thousand Oaks/SE County,2007
+183,11,41850,0.363451618,115146,103.35,37.56,26520 Carl Boyer Rd,Santa Clarita,Los Angeles,CA,Carl Boyer Rd,26520,91350,Retail (Community Center),6/23/10,4325000,Santa Clarita Valley,2007
+184,30,11519,0.388858879,14810,373.3,290.34,15053 Ventura Blvd,Sherman Oaks,Los Angeles,CA,Ventura Blvd,15053,91403,Retail (Strip Center),7/30/14,4300000,Sherman Oaks,1988
+185,32,25782,0.319931502,80586,162.9,52.12,11918-12000 Balboa Blvd,Granada Hills,Los Angeles,CA,Balboa Blvd,11918,91344,Retail,6/27/12,4200000,Eastern SFV,1986
+186,17,23260,0.255528579,91027,179.69,45.92,18655 Soledad Canyon Rd (Part of Multi-Property Sale),Canyon Country,Los Angeles,CA,Soledad Canyon Rd,18655,91351,Retail (Neighborhood Center),9/7/12,4179619,Santa Clarita Valley,2001
+187,58,20045,0.188325598,106438,208.32,39.23,9823-9829 Mason Ave (Part of Multi-Property Sale),Chatsworth,Los Angeles,CA,Mason Ave,9823,91311,Industrial,4/3/17,4175753,Chatsworth Ind,1960
+188,41,12782,0.246585385,51836,322.33,79.48,1542 E Los Angeles Ave,Simi Valley,Ventura,CA,Los Angeles Ave,1542,93065,Retail (Strip Center),8/10/17,4120000,Moorpark/Simi Valley,1977
+189,61,36750,0.354750275,103594,111.77,39.65,13730 Foothill Blvd (Part of Multi-Property Sale),Sylmar,Los Angeles,CA,Foothill Blvd,13730,91342,Retail (Neighborhood Center),1/16/14,4107666,Eastern SFV,1957
+190,53,25673,0.893533343,28732,159.7,142.7,5321 Vineland Ave,North Hollywood,Los Angeles,CA,Vineland Ave,5321,91601,Retail,3/14/17,4100000,North Hollywood,1965
+191,54,21722,0.322390098,67378,188.52,60.78,21515 Roscoe Blvd,Canoga Park,Los Angeles,CA,Roscoe Blvd,21515,91304,Retail,1/31/11,4095087,Western SFV,1964
+192,33,20038,0.251291698,79740,204.36,51.35,9143 De Soto Ave,Chatsworth,Los Angeles,CA,De Soto Ave,9143,91311,Retail,12/31/12,4095000,Western SFV,1985
+193,10,14550,0.50702164,28697,280.9,142.42,140 W Los Angeles Ave (Part of Multi-Property Sale),Moorpark,Ventura,CA,Los Angeles Ave,140,93021,Retail (Neighborhood Center),12/1/16,4087139,Moorpark/Simi Valley,2008
+194,49,14117,0.468941005,30104,286.57,134.38,15612-15624 Ventura Blvd (Part of Multi-Property Sale),Encino,Los Angeles,CA,Ventura Blvd,15612,91436,Retail,7/28/17,4045501,Encino,1969
+195,27,19481,0.240431965,81025,205.33,49.37,29020 Agoura Rd,Agoura Hills,Los Angeles,CA,Agoura Rd,29020,91301,Retail (Strip Center),6/30/11,4000000,Calabasas/Westlake Vill,1991
+196,59,11200,0.31136193,35971,354.46,110.36,12512 Victory Blvd,North Hollywood,Los Angeles,CA,Victory Blvd,12512,91606,Retail,3/26/15,3970000,North Hollywood,1959
+197,59,14500,0.25,58000,270.69,67.67,7004-7008 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,7004,91405,Retail,11/23/16,3925000,Eastern SFV,1959
+198,66,11458,0.286478648,19998,340.37,195.02,14652-14658 Ventura Blvd,Sherman Oaks,Los Angeles,CA,Ventura Blvd,14652,91403,Retail,6/23/11,3900000,Sherman Oaks,1952
+199,53,12970,0.426210115,30431,300.69,128.16,19001-19015 Ventura Blvd,Tarzana,Los Angeles,CA,Ventura Blvd,19001,91356,Retail (Strip Center),3/10/10,3900000,Tarzana,1965
+200,39,18716,0.035304881,530125,208.27,7.35,598 W Hillcrest Dr,Thousand Oaks,Ventura,CA,Hillcrest Dr,598,91360,Retail (Super Regional Mall),6/3/15,3898000,Thousand Oaks/SE County,1979
+201,31,16962,0.239127064,70933,224.4,53.66,2941 Cochran St (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Cochran St,2941,93065,Retail (Community Center),3/5/14,3806263,Moorpark/Simi Valley,1987
+202,19,18701,0.471057935,39700,404.79,190.68,24320 Town Center Dr (Part of Multi-Property Sale),Valencia,Los Angeles,CA,Town Center Dr,24320,91355,Retail (Super Regional Mall),12/19/12,3785007,Santa Clarita Valley,1999
+203,45,12980,0.480616137,27007,290.83,139.78,2010-2040 Glenoaks Blvd,San Fernando,Los Angeles,CA,Glenoaks Blvd,2010,91340,Retail (Neighborhood Center),11/1/11,3775000,Eastern SFV,1973
+204,33,14464,0.56994247,25378,259.26,147.77,22982-23010 Ventura Blvd,Woodland Hills,Los Angeles,CA,Ventura Blvd,22982,91364,Retail (Strip Center),12/30/11,3750000,Woodland Hills/Warner Ctr,1985
+205,24,14490,0.326123652,44431,256.94,83.8,481 S Ventura Rd (Part of Multi-Property Sale),Oxnard,Ventura,CA,Ventura Rd,481,93030,Retail (Neighborhood Center),1/3/14,3723128,Oxnard/Port Hueneme,1994
+206,61,19762,0.171197394,115434,188.01,32.19,10455 Laurel Canyon Blvd,Pacoima,Los Angeles,CA,Laurel Canyon Blvd,10455,91331,Retail,3/28/14,3715500,Eastern SFV,1957
+207,40,11172,0.657640688,16988,331.19,217.8,140-156 W 5th St,Oxnard,Ventura,CA,5th St,140,93030,Retail,9/8/17,3700100,Oxnard/Port Hueneme,1978
+208,12,10200,0.186628609,54654,362.75,67.7,25804 Hemingway Ave (Part of Multi-Property Sale),Stevenson Ranch,Los Angeles,CA,Hemingway Ave,25804,91381,Retail (Neighborhood Center),12/16/15,3700087,Santa Clarita Valley,2006
+209,51,20425,0.488437717,41817,181.15,88.48,101-111 S Chestnut St,Ventura,Ventura,CA,Chestnut St,101,93001,Retail,6/2/16,3700000,Ventura,1967
+210,11,41850,0.363451618,115146,88.41,32.13,26520 Carl Boyer Rd,Santa Clarita,Los Angeles,CA,Carl Boyer Rd,26520,91350,Retail (Community Center),4/29/11,3700000,Santa Clarita Valley,2007
+211,17,20483,0.194646115,105232,179.69,34.98,18635-18640 Soledad Canyon Rd (Part of Multi-Property Sale),Canyon Country,Los Angeles,CA,Soledad Canyon Rd,18635,91351,Retail (Neighborhood Center),9/7/12,3680617,Santa Clarita Valley,2001
+212,53,12000,0.417405823,28749,304.17,126.96,7650-7662 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,7650,91405,Retail,1/22/18,3650000,Eastern SFV,1965
+213,45,12392,0.521132091,23779,293.33,152.86,7005-7023 Darby Ave,Reseda,Los Angeles,CA,Darby Ave,7005,91335,Retail,12/29/17,3635000,Western SFV,1973
+214,40,16024,0.227074978,70567,225.29,51.16,1130 S Victoria Ave,Ventura,Ventura,CA,Victoria Ave,1130,93003,Retail,9/1/17,3610000,Ventura,1978
+215,56,23314,0.446013162,26136,154.41,137.74,14640 Victory Blvd,Van Nuys,Los Angeles,CA,Victory Blvd,14640,91411,Retail,10/31/14,3600000,Eastern SFV,1962
+216,54,10000,0.242060418,41312,359.07,86.92,17017-17019 Ventura Blvd (Part of Multi-Property Sale),Encino,Los Angeles,CA,Ventura Blvd,17017,91316,Retail,3/9/16,3590735,Encino,1964
+217,21,10988,0.301669229,18212,318.57,192.2,11335 Magnolia Blvd (Part of Multi-Property Sale),North Hollywood,Los Angeles,CA,Magnolia Blvd,11335,91601,Retail (Strip Center),8/16/16,3500478,North Hollywood,1997
+218,63,12494,0.189669309,54885,280.13,63.77,17700-17774 Roscoe Blvd,Northridge,Los Angeles,CA,Roscoe Blvd,17700,91325,Retail,1/14/11,3500000,Western SFV,1955
+219,47,19857,0.318783111,62290,176.26,56.19,7050 Topanga Canyon Blvd,Canoga Park,Los Angeles,CA,Topanga Canyon Blvd,7050,91303,Retail,10/10/12,3500000,Western SFV,1971
+220,31,10202,0.453019538,22520,343.07,155.41,13750-13758 Roscoe Blvd,Panorama City,Los Angeles,CA,Roscoe Blvd,13750,91402,Retail (Strip Center),10/1/13,3500000,Eastern SFV,1987
+221,31,22100,0.214070537,103237,158.37,33.9,23923-23955 Creekside Rd,Valencia,Los Angeles,CA,Creekside Rd,23923,91355,Retail,5/15/12,3500000,Santa Clarita Valley,1987
+222,8,13524,0.307398568,43995,256.95,78.99,7640 Tampa Ave,Reseda,Los Angeles,CA,Tampa Ave,7640,91335,Retail,9/25/13,3475000,Western SFV,2010
+223,15,15164,0.446315046,33976,227.51,101.54,13003 Van Nuys Blvd,Pacoima,Los Angeles,CA,Van Nuys Blvd,13003,91331,Retail (Strip Center),6/23/11,3450000,Eastern SFV,2003
+224,54,21722,0.322390098,67378,156.52,50.46,21515 Roscoe Blvd,Canoga Park,Los Angeles,CA,Roscoe Blvd,21515,91304,Retail,8/26/11,3400000,Western SFV,1964
+225,2,17430,0.263249309,66211,256.67,67.57,220 Riverpark Blvd,Oxnard,Ventura,CA,Riverpark Blvd,220,93036,Retail,7/5/17,3400000,Oxnard/Port Hueneme,2016
+226,36,13000,0.174454494,74518,257.9,44.99,4714 Telephone Rd (Part of Multi-Property Sale),Ventura,Ventura,CA,Telephone Rd,4714,93003,Retail (Community Center),7/1/15,3352661,Ventura,1982
+227,62,20280,0.461832756,43912,162.72,75.15,18115 Saticoy St,Reseda,Los Angeles,CA,Saticoy St,18115,91335,Retail (Strip Center),2/20/15,3300000,Western SFV,1956
+228,53,14500,0.083218549,87120,224.14,37.3,250 S Mills Rd,Ventura,Ventura,CA,Mills Rd,250,93003,Retail,5/5/16,3250000,Ventura,1965
+229,51,16529,0.436155896,37897,196.62,85.76,2027-2055 Glenoaks Blvd,San Fernando,Los Angeles,CA,Glenoaks Blvd,2027,91340,Retail (Strip Center),8/6/14,3250000,Eastern SFV,1967
+230,50,10512,0.259491484,40510,309.17,80.23,7601-7617 Vineland Ave,Sun Valley,Los Angeles,CA,Vineland Ave,7601,91352,Retail,12/15/15,3250000,Eastern SFV,1968
+231,34,20085,0.333521529,60221,160.54,53.54,10970 Sherman Way (Part of Portfolio),Burbank,Los Angeles,CA,Sherman Way,10970,91505,Retail (Community Center),7/31/14,3224387,Eastern SFV,1984
+232,60,20000,0.210903722,94830,158,33.32,8025 Vineland Ave,Sun Valley,Los Angeles,CA,Vineland Ave,8025,91352,Retail,1/2/15,3160000,Eastern SFV,1958
+233,11,43319,0.373861861,115869,106.75,39.91,28501 Canwood St (Part of Multi-Property Sale),Agoura Hills,Los Angeles,CA,Canwood St,28501,91301,Retail (Community Center),8/27/14,3159368,Calabasas/Westlake Vill,2007
+234,28,15790,0.458851563,34412,199.49,91.54,9005-9013 Sunland Blvd,Sun Valley,Los Angeles,CA,Sunland Blvd,9005,91352,Retail,4/17/15,3150000,Eastern SFV,1990
+235,40,10989,0.405453271,27103,282.84,114.68,755 W Channel Islands Blvd (Part of Multi-Property Sale),Port Hueneme,Ventura,CA,Channel Islands Blvd,755,93041,Retail (Neighborhood Center),9/16/16,3108077,Oxnard/Port Hueneme,1978
+236,52,11622,0.374951607,15498,266.74,200.02,6300 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,6300,91401,Retail,5/26/10,3100000,Eastern SFV,1966
+237,31,18150,0.279661017,64900,170.8,47.77,24030 Creekside Rd,Valencia,Los Angeles,CA,Creekside Rd,24030,91355,Retail,7/31/14,3100000,Santa Clarita Valley,1987
+238,61,10218,0.328679876,31088,300.98,98.92,15334 Roscoe Blvd (Part of Multi-Property Sale),Panorama City,Los Angeles,CA,Roscoe Blvd,15334,91402,Retail,7/26/16,3075427,Eastern SFV,1957
+239,66,20208,0.134471676,150277,150.33,20.21,6355 Bellingham Ave (Part of Multi-Property Sale),North Hollywood,Los Angeles,CA,Bellingham Ave,6355,91606,Retail (Neighborhood Center),12/10/15,3037768,North Hollywood,1952
+240,47,22336,0.166482812,134164,134.31,22.36,21701 Ventura Blvd,Woodland Hills,Los Angeles,CA,Ventura Blvd,21701,91364,Retail,11/8/11,3000000,Woodland Hills/Warner Ctr,1971
+241,47,22336,0.166482812,134164,134.31,22.36,21701 Ventura Blvd,Woodland Hills,Los Angeles,CA,Ventura Blvd,21701,91364,Retail,12/6/11,3000000,Woodland Hills/Warner Ctr,1971
+242,56,10300,0.454726061,22651,291.26,132.44,5569 Reseda Blvd,Tarzana,Los Angeles,CA,Reseda Blvd,5569,91356,Retail,11/14/17,3000000,Tarzana,1962
+243,40,10024,0.359566683,27878,299.28,107.61,1513-1527 N San Fernando Blvd,Burbank,Los Angeles,CA,San Fernando Blvd,1513,91504,Retail,3/31/16,3000000,Burbank,1978
+244,66,36400,0.989157314,36799,82.42,81.52,6639 Laurel Canyon Blvd,North Hollywood,Los Angeles,CA,Laurel Canyon Blvd,6639,91606,Retail (Neighborhood Center),1/28/16,3000000,North Hollywood,1952
+245,33,17037,0.429803981,39639,174.62,75.05,2595-2597 Bolker Dr,Port Hueneme,Ventura,CA,Bolker Dr,2595,93041,Retail,5/22/18,2975000,Oxnard/Port Hueneme,1985
+246,62,45000,0.708017765,46609,66.04,63.76,7200 Vineland Ave (Part of Multi-Property Sale),Sun Valley,Los Angeles,CA,Vineland Ave,7200,91352,Retail (Strip Center),2/7/11,2971718,Eastern SFV,1956
+247,39,21559,0.162812826,66211,137.76,44.86,1716-1756 Erringer Rd (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Erringer Rd,1716,93065,Retail (Neighborhood Center),12/5/17,2970062,Moorpark/Simi Valley,1979
+248,28,12000,0.091797159,130723,245.83,22.57,1601 E Ventura Blvd,Oxnard,Ventura,CA,Ventura Blvd,1601,93036,Retail,1/19/11,2950000,Oxnard/Port Hueneme,1990
+249,15,10500,0.263441804,39857,279.52,73.64,2003 Yosemite Ave,Simi Valley,Ventura,CA,Yosemite Ave,2003,93063,Retail,4/25/16,2935000,Moorpark/Simi Valley,2003
+250,61,26140,0.177378786,74744,111.77,39.09,13788 Foothill Blvd (Part of Multi-Property Sale),Sylmar,Los Angeles,CA,Foothill Blvd,13788,91342,Retail (Neighborhood Center),1/16/14,2921752,Eastern SFV,1957
+251,30,12059,0.174112042,69260,241.13,41.98,1877 E Daily Dr (Part of Multi-Property Sale),Camarillo,Ventura,CA,Daily Dr,1877,93010,Retail (Neighborhood Center),10/30/13,2907777,Camarillo/Point Mugu,1988
+252,32,12154,0.232514539,52272,238.6,55.48,4505-4597 Pleasant Valley Rd,Camarillo,Ventura,CA,Pleasant Valley Rd,4505,93012,Retail (Strip Center),11/19/14,2900000,Camarillo/Point Mugu,1986
+253,61,25430,0.177379236,70758,111.77,40.17,13784-13790 Foothill Blvd (Part of Multi-Property Sale),Sylmar,Los Angeles,CA,Foothill Blvd,13784,91342,Retail (Neighborhood Center),1/16/14,2842393,Eastern SFV,1957
+254,15,10488,0.137583628,76230,266.97,36.73,1295 S Victoria Ave,Ventura,Ventura,CA,Victoria Ave,1295,93003,Retail (Neighborhood Center),4/17/12,2800000,Ventura,2003
+255,47,12064,0.346189164,34848,232.1,80.35,19620-19626 Nordhoff St,Northridge,Los Angeles,CA,Nordhoff St,19620,91324,Retail,12/1/10,2800000,Western SFV,1971
+256,33,10521,0.060319226,174422,261.63,15.78,22920-22950 Vanowen St (Part of Multi-Property Sale),West Hills,Los Angeles,CA,Vanowen St,22920,91307,Retail (Power Center),6/13/14,2752610,Woodland Hills/Warner Ctr,1985
+257,30,11128,0.515161335,21601,247.12,127.31,3195 Willow Ln,Westlake Village,Ventura,CA,Willow Ln,3195,91361,Retail,11/30/15,2750000,Thousand Oaks/SE County,1988
+258,32,11057,0.153569444,72000,248.71,38.19,25710 The Old Rd,Valencia,Los Angeles,CA,The Old Rd,25710,91355,Retail,9/12/16,2750000,Santa Clarita Valley,1986
+259,42,11328,0.243043189,46609,242.76,59,1304 Newbury Rd,Newbury Park,Ventura,CA,Newbury Rd,1304,91320,Retail (Strip Center),8/12/11,2750000,Thousand Oaks/SE County,1976
+260,30,11391,0.174334252,65340,241.13,42.04,1727 E Daily Dr (Part of Multi-Property Sale),Camarillo,Ventura,CA,Daily Dr,1727,93010,Retail (Neighborhood Center),10/30/13,2746702,Camarillo/Point Mugu,1988
+261,38,18432,0.920679321,20020,148.11,136.36,300 W Esplanade Dr,Oxnard,Ventura,CA,Esplanade Dr,300,93036,Retail (Neighborhood Center),5/24/18,2730000,Oxnard/Port Hueneme,1980
+262,52,10200,0.316436061,32234,267.16,84.54,1771-1789 E Thousand Oaks Blvd,Thousand Oaks,Ventura,CA,Thousand Oaks Blvd,1771,91362,Retail (Strip Center),2/27/15,2725000,Thousand Oaks/SE County,1966
+263,32,13526,0.155257117,43560,200.19,62.16,1655 E Thousand Oaks Blvd,Thousand Oaks,Ventura,CA,Thousand Oaks Blvd,1655,91362,Retail (Strip Center),12/23/10,2707800,Thousand Oaks/SE County,1986
+264,39,40625,0.309656644,124215,265.85,86.95,16040 Sherman Way,Van Nuys,Los Angeles,CA,Sherman Way,16040,91406,Retail,5/24/16,2700000,Eastern SFV,1979
+265,32,12400,0.149040253,83199,215.04,32.05,2180 1st St (Part of Multi-Property Sale),Simi Valley,Ventura,CA,1st St,2180,93065,Retail (Strip Center),7/30/14,2666449,Moorpark/Simi Valley,1986
+266,26,12639,0.198464292,63684,209.67,41.61,23720 Wiley Canyon Rd,Santa Clarita,Los Angeles,CA,Wiley Canyon Rd,23720,91355,Retail,4/28/16,2650000,Santa Clarita Valley,1992
+267,35,10199,0.437312409,23322,257.9,112.78,4718 Telephone Rd (Part of Multi-Property Sale),Ventura,Ventura,CA,Telephone Rd,4718,93003,Retail (Community Center),7/1/15,2630291,Ventura,1983
+268,54,17250,0.616071429,28000,152.17,93.75,1258 Saviers Rd,Oxnard,Ventura,CA,Saviers Rd,1258,93033,Retail,9/16/15,2625000,Oxnard/Port Hueneme,1964
+269,50,22000,0.566149412,38859,118.18,66.91,244 E Thousand Oaks Blvd,Thousand Oaks,Ventura,CA,Thousand Oaks Blvd,244,91360,Retail,3/11/14,2600000,Thousand Oaks/SE County,1968
+270,46,10000,0.133472144,37461,260,69.4,3366 E Thousand Oaks Blvd,Thousand Oaks,Ventura,CA,Thousand Oaks Blvd,3366,91362,Retail,8/2/16,2600000,Thousand Oaks/SE County,1972
+271,61,10155,0.284302472,35719,256.03,72.79,14701 Ventura Blvd,Sherman Oaks,Los Angeles,CA,Ventura Blvd,14701,91403,Retail,3/31/16,2600000,Sherman Oaks,1957
+272,43,13879,0.269014576,51592,186.97,50.3,5825-5835 E Los Angeles Ave,Simi Valley,Ventura,CA,Los Angeles Ave,5825,93063,Retail (Neighborhood Center),8/28/15,2595000,Moorpark/Simi Valley,1975
+273,18,11481,0.80675989,14231,224.28,180.94,14600 Roscoe Blvd,Panorama City,Los Angeles,CA,Roscoe Blvd,14600,91402,Retail,1/25/12,2575000,Eastern SFV,2000
+274,63,22000,0.209079764,105223,114.26,23.89,11633 Victory Blvd (Part of Multi-Property Sale),North Hollywood,Los Angeles,CA,Victory Blvd,11633,91606,Retail,4/12/10,2513774,North Hollywood,1955
+275,45,12392,0.521132091,23779,201.74,105.13,7005-7023 Darby Ave,Reseda,Los Angeles,CA,Darby Ave,7005,91335,Retail,8/31/15,2500000,Western SFV,1973
+276,20,10800,0.22539444,47916,231.48,52.17,600 S Victoria Ave,Oxnard,Ventura,CA,Victoria Ave,600,93035,Retail (Strip Center),1/29/10,2500000,Oxnard/Port Hueneme,1998
+277,63,11150,0.412855926,27007,224.22,92.57,17714-17728 Vanowen St,Reseda,Los Angeles,CA,Vanowen St,17714,91335,Retail (Strip Center),11/10/14,2500000,Western SFV,1955
+278,60,32825,0.785010522,20908,76.16,119.57,545-555 S A St,Oxnard,Ventura,CA,A St,545,93030,Retail,5/4/17,2500000,Oxnard/Port Hueneme,1958
+279,20,10800,0.22539444,47916,226.85,51.13,600 S Victoria Ave,Oxnard,Ventura,CA,Victoria Ave,600,93035,Retail (Strip Center),9/25/15,2450000,Oxnard/Port Hueneme,1998
+280,23,12956,0.263215635,49222,377.98,99.49,3302-3330 E Thousand Oaks Blvd,Thousand Oaks,Ventura,CA,Thousand Oaks Blvd,3302,91362,Retail (Strip Center),3/20/13,2448564,Thousand Oaks/SE County,1995
+281,17,25000,0.155113791,161172,97.93,15.19,3650 E Main St (Part of Multi-Property Sale),Ventura,Ventura,CA,Main St,3650,93003,Retail,5/2/14,2448313,Ventura,2001
+282,56,12837,0.300716829,42688,189.81,57.08,14901-14925 Magnolia Blvd (Part of Multi-Property Sale),Sherman Oaks,Los Angeles,CA,Magnolia Blvd,14901,91403,Retail,12/21/10,2436563,Eastern SFV,1962
+283,46,10430,0.271169696,38463,232.45,63.03,19801 Vanowen St,Canoga Park,Los Angeles,CA,Vanowen St,19801,91306,Retail (Strip Center),1/9/14,2424500,Western SFV,1972
+284,51,16296,0.185045137,88065,147.28,27.25,983 E Easy St,Simi Valley,Ventura,CA,Easy St,983,93065,Retail,6/3/15,2400000,Moorpark/Simi Valley,1967
+285,21,16800,0.153412048,109509,139.88,21.46,4279 Tierra Rejada Rd,Moorpark,Ventura,CA,Tierra Rejada Rd,4279,93021,Retail (Neighborhood Center),12/30/10,2350000,Moorpark/Simi Valley,1997
+286,33,20038,0.251291698,79740,116.03,29.16,9143 De Soto Ave,Chatsworth,Los Angeles,CA,De Soto Ave,9143,91311,Retail,9/23/11,2325000,Western SFV,1985
+287,53,12238,0.423636112,28888,188.18,79.72,1778-1786 Erringer Rd (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Erringer Rd,1778,93065,Retail (Neighborhood Center),11/1/13,2302960,Moorpark/Simi Valley,1965
+288,32,11922,0.705402047,16901,192.92,136.08,13561-13575 Glenoaks Blvd,Sylmar,Los Angeles,CA,Glenoaks Blvd,13561,91342,Retail (Strip Center),10/2/12,2300000,Eastern SFV,1986
+289,19,10131,0.355025231,28536,225.55,80.07,18900-18916 Roscoe Blvd,Northridge,Los Angeles,CA,Roscoe Blvd,18900,91324,Retail,11/21/11,2285000,Western SFV,1999
+290,28,15790,0.458851563,34412,142.5,65.38,9005-9013 Sunland Blvd,Sun Valley,Los Angeles,CA,Sunland Blvd,9005,91352,Retail,8/30/13,2250000,Eastern SFV,1990
+291,32,14661,0.398407565,36799,153.47,61.14,4221 E Main St,Ventura,Ventura,CA,Main St,4221,93003,Retail,2/26/16,2250000,Ventura,1986
+292,54,15024,0.500816694,29999,147.76,74,7963 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,7963,91402,Retail,12/15/10,2220000,Eastern SFV,1964
+293,53,10000,0.269890964,37052,220,59.38,2167-2175 Pickwick Dr,Camarillo,Ventura,CA,Pickwick Dr,2167,93010,Retail (Neighborhood Center),3/9/16,2200000,Camarillo/Point Mugu,1965
+294,47,25204,0.330630985,76230,87.29,28.86,7241 Sepulveda Blvd,Van Nuys,Los Angeles,CA,Sepulveda Blvd,7241,91405,Retail,6/7/12,2200000,Eastern SFV,1971
+295,30,21667,0.547146465,39600,101.54,55.56,18719-18725 Sherman Way,Reseda,Los Angeles,CA,Sherman Way,18719,91335,Retail,1/22/14,2200000,Western SFV,1988
+296,54,15024,0.500816694,29999,146.43,73.33,7963 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,7963,91402,Retail,5/19/10,2200000,Eastern SFV,1964
+297,40,13391,0.298466545,44866,162.42,48.48,360-366 W Esplanade Dr,Oxnard,Ventura,CA,Esplanade Dr,360,93036,Retail (Strip Center),5/31/16,2175000,Oxnard/Port Hueneme,1978
+298,19,10730,0.217991955,49222,201.2,43.86,1080 Country Club Dr (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Country Club Dr,1080,93065,Retail (Strip Center),6/8/17,2158850,Moorpark/Simi Valley,1999
+299,10,10336,0.00020979,14300,208.01,150.34,5958 Vineland Ave,North Hollywood,Los Angeles,CA,Vineland Ave,5958,91601,Retail,11/16/12,2150000,North Hollywood,2008
+300,13,10530,0.29125408,36154,202.18,58.89,21514-21534 Devonshire St,Chatsworth,Los Angeles,CA,Devonshire St,21514,91311,Retail (Strip Center),4/20/12,2129000,Western SFV,2005
+301,63,11150,0.412855926,27007,188.34,77.76,17714-17728 Vanowen St,Reseda,Los Angeles,CA,Vanowen St,17714,91335,Retail (Strip Center),1/6/14,2100000,Western SFV,1955
+302,33,17037,0.429803981,39639,123.26,52.98,2595-2597 Bolker Dr,Port Hueneme,Ventura,CA,Bolker Dr,2595,93041,Retail,9/15/17,2100000,Oxnard/Port Hueneme,1985
+303,43,13879,0.269014576,51592,151.31,40.7,5825-5835 E Los Angeles Ave,Simi Valley,Ventura,CA,Los Angeles Ave,5825,93063,Retail (Neighborhood Center),7/11/11,2100000,Moorpark/Simi Valley,1975
+304,54,18000,0.241202798,74626,115.85,27.94,1609-1689 Royal Ave (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Royal Ave,1609,93065,Retail (Strip Center),12/23/15,2085222,Moorpark/Simi Valley,1964
+305,40,13929,0.313481882,22215,297.94,186.81,15611-15619 Ventura Blvd,Encino,Los Angeles,CA,Ventura Blvd,15611,91436,Retail (Strip Center),5/10/17,2075000,Encino,1978
+306,55,12310,0.46636942,18391,168.36,112.69,8622-8628 Reseda Blvd,Northridge,Los Angeles,CA,Reseda Blvd,8622,91324,Retail,8/16/17,2072500,Western SFV,1963
+307,29,40492,0.363114614,111513,125.96,45.74,21515-21525 Soledad Canyon Rd,Santa Clarita,Los Angeles,CA,Soledad Canyon Rd,21515,91350,Retail (Neighborhood Center),2/2/10,2058000,Santa Clarita Valley,1989
+308,33,15931,0.358555963,44431,125.54,45.01,6031-6039 Lankershim Blvd,North Hollywood,Los Angeles,CA,Lankershim Blvd,6031,91606,Retail,8/4/15,2000000,North Hollywood,1985
+309,38,10000,0.402754843,24829,200,80.55,19256 Roscoe Blvd,Northridge,Los Angeles,CA,Roscoe Blvd,19256,91324,Retail,6/30/17,2000000,Western SFV,1980
+310,40,10780,0.268995633,40075,185.11,49.79,2030-2050 Sinaloa Rd,Simi Valley,Ventura,CA,Sinaloa Rd,2030,93065,Retail,8/7/13,1995500,Moorpark/Simi Valley,1978
+311,53,12465,0.198721423,62726,158.23,31.44,1197 E Los Angeles Ave (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Los Angeles Ave,1197,93065,Retail (Community Center),8/6/13,1972310,Moorpark/Simi Valley,1965
+312,53,11878,0.231089494,51400,158.23,36.56,2050 E 1st St (Part of Multi-Property Sale),Simi Valley,Ventura,CA,1st St,2050,93065,Retail (Community Center),8/6/13,1879430,Moorpark/Simi Valley,1965
+313,50,14314,0.310008013,46173,130.29,40.39,2636 Sycamore Dr,Simi Valley,Ventura,CA,Sycamore Dr,2636,93065,Retail,8/28/13,1865000,Moorpark/Simi Valley,1968
+314,62,10500,0.497417257,10454,172.38,173.13,6450-6452 Bellingham Ave,North Hollywood,Los Angeles,CA,Bellingham Ave,6450,91606,Retail,7/21/16,1810000,North Hollywood,1956
+315,11,16249,0.068644308,236713,111.31,7.64,330 Via Las Brisas (Part of Multi-Property Sale),Thousand Oaks,Ventura,CA,Via Las Brisas,330,91320,Retail (Neighborhood Center),6/14/11,1808730,Thousand Oaks/SE County,2007
+316,62,10270,0.982399082,5227,170.4,334.79,12150-12162 Hamlin St,North Hollywood,Los Angeles,CA,Hamlin St,12150,91606,Retail,9/19/16,1750000,North Hollywood,1956
+317,40,13391,0.298466545,44866,126.95,37.89,360-366 W Esplanade Dr,Oxnard,Ventura,CA,Esplanade Dr,360,93036,Retail (Strip Center),8/25/14,1700000,Oxnard/Port Hueneme,1978
+318,48,21800,0.462413032,47144,77.98,36.06,18901 Soledad Canyon Rd,Canyon Country,Los Angeles,CA,Soledad Canyon Rd,18901,91351,Retail,8/29/11,1700000,Santa Clarita Valley,1970
+319,47,23718,0.29592015,80150,70.83,20.96,5845 E Los Angeles Ave,Simi Valley,Ventura,CA,Los Angeles Ave,5845,93063,Retail (Neighborhood Center),8/7/15,1680000,Moorpark/Simi Valley,1971
+320,63,27084,0.581089489,46609,60.82,35.34,19301-19323 Vanowen St (Part of Multi-Property Sale),Reseda,Los Angeles,CA,Vanowen St,19301,91335,Retail (Strip Center),3/21/14,1647354,Western SFV,1955
+321,38,10764,0.852121596,12632,150.67,128.39,521-539 S A St,Oxnard,Ventura,CA,A St,521,93030,Retail,9/20/10,1621856,Oxnard/Port Hueneme,1980
+322,38,18432,0.920679321,20020,86.84,79.95,300 W Esplanade Dr (Part of Portfolio),Oxnard,Ventura,CA,Esplanade Dr,300,93036,Retail (Neighborhood Center),4/8/10,1600634,Oxnard/Port Hueneme,1980
+323,53,10000,0.229568411,43560,158.23,36.32,1203 E Los Angeles Ave (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Los Angeles Ave,1203,93065,Retail (Community Center),8/6/13,1582278,Moorpark/Simi Valley,1965
+324,30,21667,0.547146465,39600,71.95,39.37,18719-18725 Sherman Way,Reseda,Los Angeles,CA,Sherman Way,18719,91335,Retail,5/25/12,1559000,Western SFV,1988
+325,37,11925,0.110692338,53861,129.98,28.78,310 S Wells Rd,Ventura,Ventura,CA,Wells Rd,310,93004,Retail,2/1/16,1550000,Ventura,1981
+326,63,11340,0.526169265,10776,136.68,143.83,7307-7315 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,7307,91405,Retail,2/1/12,1550000,Eastern SFV,1955
+327,55,10665,0.262704141,40597,145.34,38.18,1512-1534 E Los Angeles Ave,Simi Valley,Ventura,CA,Los Angeles Ave,1512,93065,Retail (Strip Center),2/9/11,1550000,Moorpark/Simi Valley,1963
+328,10,16842,0.16039389,52502,91.44,29.33,267 Village Commons Blvd,Camarillo,Ventura,CA,Village Commons Blvd,267,93012,Retail (Strip Center),12/19/11,1540000,Camarillo/Point Mugu,2008
+329,11,13774,0.09139043,75358,111.31,20.35,350 Via Las Brisas (Part of Multi-Property Sale),Thousand Oaks,Ventura,CA,Via Las Brisas,350,91320,Retail (Neighborhood Center),6/14/11,1533230,Thousand Oaks/SE County,2007
+330,33,14280,0.298021538,47916,105.04,31.3,6680 Crescent St,Ventura,Ventura,CA,Crescent St,6680,93003,Retail,3/30/11,1500000,Ventura,1985
+331,49,11374,0.354197808,32112,131.88,46.71,13550 Sherman Way,Van Nuys,Los Angeles,CA,Sherman Way,13550,91405,Retail,1/21/10,1500000,North Hollywood,1969
+332,45,12980,0.480616137,27007,115.56,55.54,2010-2040 Glenoaks Blvd,San Fernando,Los Angeles,CA,Glenoaks Blvd,2010,91340,Retail (Neighborhood Center),11/5/13,1500000,Eastern SFV,1973
+333,66,36400,0.989157314,36799,40.38,39.95,6639 Laurel Canyon Blvd,North Hollywood,Los Angeles,CA,Laurel Canyon Blvd,6639,91606,Retail (Neighborhood Center),4/27/18,1470000,North Hollywood,1952
+334,68,15500,0.22597058,68593,91.94,20.77,2171-2191 E Thompson Blvd,Ventura,Ventura,CA,Thompson Blvd,2171,93001,Retail,4/15/11,1425000,Ventura,1950
+335,36,12532,0.164851355,38010,111.71,36.83,3875 Telegraph Rd,Ventura,Ventura,CA,Telegraph Rd,3875,93003,Office (Strip Center),6/15/15,1400000,Ventura,1982
+336,68,15500,0.22597058,68593,87.1,19.68,2171-2191 E Thompson Blvd,Ventura,Ventura,CA,Thompson Blvd,2171,93001,Retail,9/30/14,1350000,Ventura,1950
+337,11,11963,0.18308846,65340,111.31,20.38,360 Via Las Brisas (Part of Multi-Property Sale),Thousand Oaks,Ventura,CA,Via Las Brisas,360,91320,Retail (Neighborhood Center),6/14/11,1331641,Thousand Oaks/SE County,2007
+338,33,10692,0.240642794,44431,123.92,29.82,1301 Channel Islands Blvd (Part of Multi-Property Sale),Oxnard,Ventura,CA,Channel Islands Blvd,1301,93033,Retail (Community Center),11/10/15,1324985,Oxnard/Port Hueneme,1985
+339,12,18000,0.373761914,48159,106.75,39.9,28509 Canwood St (Part of Multi-Property Sale),Agoura Hills,Los Angeles,CA,Canwood St,28509,91301,Retail (Community Center),8/27/14,1312787,Calabasas/Westlake Vill,2006
+340,38,12730,0.374676242,33976,100.16,37.53,17804-17824 Sierra Hwy,Canyon Country,Los Angeles,CA,Sierra Hwy,17804,91351,Retail (Strip Center),8/27/13,1275000,Santa Clarita Valley,1980
+341,52,18050,0.552055297,32696,141.27,77.99,22864-22898 Ventura Blvd,Woodland Hills,Los Angeles,CA,Ventura Blvd,22864,91364,Retail (Strip Center),8/16/11,1275000,Woodland Hills/Warner Ctr,1966
+342,38,10764,0.852121596,12632,118.45,100.93,521-539 S A St,Oxnard,Ventura,CA,A St,521,93030,Retail,2/17/15,1275000,Oxnard/Port Hueneme,1980
+343,32,11261,0.426536874,26401,113.06,48.22,7444 Reseda Blvd (Part of Multi-Property Sale),Reseda,Los Angeles,CA,Reseda Blvd,7444,91335,Retail,3/10/17,1273192,Western SFV,1986
+344,8,11021,0.246020939,44797,115.48,28.41,8411 Fallbrook Ave (Part of Multi-Property Sale),West Hills,Los Angeles,CA,Fallbrook Ave,8411,91304,Retail,1/17/13,1272723,Western SFV,2010
+345,31,10593,0.35762998,29620,117.67,42.08,2475 Saviers Rd (Part of Multi-Property Sale),Oxnard,Ventura,CA,Saviers Rd,2475,93033,Retail (Community Center),12/24/12,1246462,Oxnard/Port Hueneme,1987
+346,61,18132,0.392697031,46173,64.8,25.45,18118-18120 Sherman Way,Reseda,Los Angeles,CA,Sherman Way,18118,91335,Retail,10/12/16,1175000,Western SFV,1957
+347,11,43319,0.373861861,115869,107.44,40.17,28501 Canwood St (Part of Multi-Property Sale),Agoura Hills,Los Angeles,CA,Canwood St,28501,91301,Retail (Community Center),4/16/18,1153790,Calabasas/Westlake Vill,2007
+348,17,11760,0.040904917,143748,97.93,8.01,1230-1232 Arundell Ave (Part of Multi-Property Sale),Ventura,Ventura,CA,Arundell Ave,1230,93003,Retail,5/2/14,1151687,Ventura,2001
+349,56,16500,0.461939024,35719,69.7,32.2,7619-7625 Van Nuys Blvd,Van Nuys,Los Angeles,CA,Van Nuys Blvd,7619,91405,Retail (Strip Center),3/14/11,1150000,Eastern SFV,1962
+350,48,10235,0.286542176,35719,109.23,31.3,18821 Soledad Canyon Rd,Canyon Country,Los Angeles,CA,Soledad Canyon Rd,18821,91351,Retail,12/2/11,1118000,Santa Clarita Valley,1970
+351,39,13280,0.38896374,17071,82.48,64.17,1038 N Maclay Ave,San Fernando,Los Angeles,CA,Maclay Ave,1038,91340,Multi-Family (Strip Center),8/6/10,1095375,San Fernando MF,1979
+352,26,17724,0.121719065,48538,60.7,22.16,1900 E Los Angeles Ave (Part of Multi-Property Sale),Simi Valley,Ventura,CA,Los Angeles Ave,1900,93065,Office (Neighborhood Center),11/1/13,1075850,Moorpark/Simi Valley,1992
+353,36,25780,0.246594735,104544,40.92,10.09,3935 Cochran St,Simi Valley,Ventura,CA,Cochran St,3935,93063,Retail (Neighborhood Center),7/18/17,1055000,Moorpark/Simi Valley,1982
+354,40,13111,0.281297603,46609,76.27,21.45,3700-3720 Saviers Rd,Oxnard,Ventura,CA,Saviers Rd,3700,93033,Retail,8/30/13,1000000,Oxnard/Port Hueneme,1978
+355,40,11172,0.657640688,16988,89.51,58.86,140-156 W 5th St,Oxnard,Ventura,CA,5th St,140,93030,Retail,2/4/16,1000000,Oxnard/Port Hueneme,1978
