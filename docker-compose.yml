@@ -19,8 +19,8 @@ services:
   master:
     build:
       context: .
-      dockerfile: Dockerfile
-#      dockerfile: Dockerfile_tensorflow
+      dockerfile: Dockerfile_tensorflow
+#      dockerfile: Dockerfile
 
     command: start-notebook.sh --NotebookApp.token=''
     hostname: master
